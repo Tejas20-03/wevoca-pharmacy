@@ -93,7 +93,7 @@ const HomeProducts: React.FC<IProps> = ({ productBannerType }) => {
           <Box className={style.titleWrapper}>
             <HomeSectionTitle
               title={sectionTitle}
-              color="var(--text-color)"
+              color="var(--primary-color)"
             />
             <div className={style.btnGroup}>
               <button

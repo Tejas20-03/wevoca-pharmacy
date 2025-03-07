@@ -29,7 +29,7 @@ const HomeDesktopCategory: React.FC<IProps> = ({ sectionTitle, data }) => {
   return (
     <Container className={style.mainContainer}>
       <Box className={style.titleWrapper}>
-        <HomeSectionTitle title={sectionTitle} color="var(--text-color)" />
+        <HomeSectionTitle title={sectionTitle} color="var(--primary-color)" />
         <div className={style.btnGroup}>
           <button className={`swiper-button`} ref={navigationPrevRef}>
             <LeftArrowWithBg />
