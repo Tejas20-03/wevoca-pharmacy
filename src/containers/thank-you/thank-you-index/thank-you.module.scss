@@ -1,0 +1,196 @@
+@import '@/styles/mixins';
+
+.pageSpacing {
+  padding-bottom: 80px;
+  @include responsive-sm() {
+    padding-bottom: 120px;
+  }
+}
+
+.BannerSection {
+  background-color: var(--primary-color);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--text-color-alt);
+  margin: 2.5rem 0 1rem;
+  .orderRecevied {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 6px 0;
+  }
+}
+.orderDetailContainer {
+  width: 100%;
+  @include flex(center, flex-start);
+  margin: 30px 0 40px;
+  gap: 5%;
+  @include responsive-lg() {
+    @include flex(flex-start, flex-start, row, wrap);
+    gap: 0;
+  }
+  .orderCustomerDetail {
+    flex: 0 0 33.3%;
+    max-width: 33.3%;
+    @include responsive-lg() {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .customerTitle {
+      font-size: 1rem;
+      font-weight: 600;
+      overflow-wrap: break-word;
+      @include responsive-sm() {
+        font-size: 0.9rem;
+      }
+    }
+    .CustomerAddress {
+      font-size: 0.8rem;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-top: 8px;
+      color: var(--text-color-light);
+    }
+  }
+  .orderItemDetail {
+    flex: 1;
+    @include responsive-lg() {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      border-top: 1px solid var(--border-line-grey-color);
+      padding-top: 15px;
+      margin-top: 15px;
+    }
+    .productTitleContainer {
+      margin-bottom: 10px;
+      .productTitleInnerContainer {
+        @include flex(space-between, flex-start);
+        .productTitle {
+          font-size: 0.8rem;
+          font-weight: 400;
+          color: var(--text-color-light);
+          flex: 0 0 70%;
+          max-width: 70%;
+          line-height: 1.3;
+        }
+        .productPrice {
+          font-size: 0.8rem;
+          font-weight: 400;
+          color: var(--text-color-light);
+        }
+      }
+      .productPrice {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--text-color-light);
+      }
+    }
+  }
+  .orderPaymentDetail {
+    flex: 1;
+    @include responsive-lg() {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      border-top: 1px solid var(--border-line-grey-color);
+      padding-top: 15px;
+      margin-top: 15px;
+    }
+    @include flex(space-between, flex-start, column-start);
+    .Gateway {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--primary-color);
+    }
+    .Total {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--primary-color);
+    }
+  }
+}
+
+.billPricing {
+  width: 100%;
+  > p {
+    font-size: 0.8rem;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+  }
+  .priceTable {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    div {
+      @include flex(space-between, center, row, wrap);
+      margin-bottom: 5px;
+      > p {
+        font-weight: 500;
+        &:first-child {
+          color: var(--text-color-grey);
+        }
+        &:last-child {
+          color: var(--text-color);
+        }
+      }
+    }
+  }
+  .orderTotal {
+    div {
+      @include flex(space-between, center, row, wrap);
+      margin-bottom: 5px;
+      > p {
+        font-weight: 600;
+        &:first-child {
+          color: var(--text-color);
+        }
+        &:last-child {
+          color: var(--text-color);
+        }
+      }
+    }
+  }
+}
+
+.trackOrderScreen {
+  padding: 15px 50px;
+  text-transform: uppercase;
+}
+
+.orderTrackBtnWrapper {
+  text-align: center;
+  p {
+    color: var(--primary-color);
+    margin-top: 15px;
+    button {
+      background-color: transparent;
+      color: var(--primary-color);
+      font-size: inherit;
+      border: none;
+      border-bottom: 1px solid var(--primary-color) !important;
+    }
+  }
+}
+
+.cartContainerContent {
+  display: block !important;
+  .gridBox {
+    text-align: center;
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 0;
+    }
+    p {
+      font-size: 1rem;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+  }
+}

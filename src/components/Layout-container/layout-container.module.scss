@@ -1,0 +1,8 @@
+@import '@/styles/mixins';
+.aboutBaseLayout {
+  padding-top: 0 !important;
+  .productContainer {
+    padding-top: 0;
+    @include padding-horizontal(0px);
+  }
+}

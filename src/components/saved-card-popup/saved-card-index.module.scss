@@ -1,0 +1,44 @@
+@import "@/styles/mixins";
+.voucherPopupContainer {
+    .voucherPopupContainerContent {
+        padding: 3rem 2rem 2rem;
+        flex-direction: column;
+        @include responsive-sm() {
+            padding: 4rem 2rem 2rem;
+        }
+    }
+}
+.voucherAllContent {
+    padding-bottom: 30px;
+}
+.savedCardContainer {
+    display: flex;
+    margin-bottom: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+    @include responsive-sm() {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    > div {
+        flex-basis: calc(50% - 8px);
+        max-width: calc(50% - 8px);
+        margin-top: 0;
+        // margin-right: 5px;
+        @include responsive-sm() {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+            // margin-bottom: 20px;
+        }
+        &:last-child {
+            margin-left: 5px;
+            margin-right: 0;
+            @include responsive-sm() {
+                margin-left: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

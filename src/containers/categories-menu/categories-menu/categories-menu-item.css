@@ -1,0 +1,109 @@
+.categoryMainItems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.categoryMainItems:last-child {
+  border-bottom: none;
+}
+
+.categoryMainItems button {
+  all: unset;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.categoryMainItems a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.cateogries-menu {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.cateogries-menu .MuiAccordionDetails-root {
+  padding: 0;
+}
+
+.cateogries-menu .cateogries-itemLink p {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.cateogries-menu .cateogries-itemLink button {
+  min-width: initial;
+  all: unset;
+  cursor: pointer;
+}
+
+.cateogries-menu .cateogries-itemLink a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.cateogries-menu ul {
+  width: 100%;
+  background: var(--primary-color);
+}
+
+.cateogries-menu ul ul {
+  background: #028e82;
+}
+
+.cateogries-menu ul ul ul {
+  background: #028e82;
+}
+
+.cateogries-menu ul.visible {
+  display: block;
+}
+
+.cateogries-menu .submenu li .cateogries-menu {
+  border-bottom: 1px solid #fff;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: var(--primary-color);
+}
+
+.cateogries-menu .submenu li .cateogries-menu .cateogries-menu {
+  background: #028e82;
+}
+
+.cateogries-menu .submenu li .cateogries-menu .cateogries-menu .cateogries-menu {
+  background: #028e82;
+}
+
+.cateogries-menu .submenu li .cateogries-menu .cateogries-itemLink a {
+  color: white;
+}
+
+.cateogries-menu .submenu li .cateogries-menu .cateogries-itemLink button svg path {
+  fill: #fff;
+}
+
+.cateogries-menu .submenu li:last-child > .cateogries-menu {
+  border-bottom: none;
+}
+
+.cateogries-menu .submenu .cateogries-menu.no-submenu a {
+  display: block;
+}
+/*# sourceMappingURL=categories-menu-item.css.map */

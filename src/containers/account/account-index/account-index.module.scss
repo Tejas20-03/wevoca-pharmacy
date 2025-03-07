@@ -1,0 +1,224 @@
+@import "@/styles/mixins";
+.pageContainer {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 180px;
+}
+.accountContainer {
+  @include responsive-sm() {
+    display: inline-block !important;
+  }
+  .accountSec1 {
+    h1 {
+      font-weight: 700;
+      color: var(--primary-color);
+      overflow-wrap: break-word;
+      @include responsive-lg() {
+        font-size: 1.8rem;
+      }
+      @include responsive-sm() {
+        width: 100%;
+      }
+      @include responsive-2xs() {
+        font-size: 1.5rem;
+      }
+    }
+    .addressBox {
+      @include flex(flex-start, center);
+      margin-top: 10px;
+      margin-bottom: 40px;
+      @include responsive-md() {
+        margin-bottom: 40px;
+      }
+      @include responsive-sm() {
+        margin: 10px 0 30px;
+      }
+      @include responsive-2xs() {
+        @include flex(space-between, center);
+      }
+      @include responsive-xs() {
+        flex-wrap: wrap !important;
+      }
+      p {
+        font-weight: 500;
+        color: var(--primary-color);
+        font-size: 1.9rem;
+        margin-right: 3rem;
+        @include responsive-lg() {
+          font-size: 1.6rem;
+          margin-right: 2rem;
+        }
+        @include responsive-2xs() {
+          font-size: 1.3rem;
+          margin-right: 1rem;
+        }
+      }
+      button {
+        text-transform: uppercase;
+        padding-left: 25px;
+        padding-right: 25px;
+        @include responsive-2xs() {
+          padding-left: 20px;
+          padding-right: 20px;
+          font-size: 0.7rem;
+        }
+      }
+    }
+    ul {
+      @include flex(flex-start, center);
+      list-style: none;
+      @include responsive-sm() {
+        @include flex(flex-start, center);
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      li {
+        margin: 0 11px;
+        text-align: center;
+        @include responsive-sm() {
+          margin: 0 10px;
+        }
+        @include responsive-2xs() {
+          flex: 1;
+        }
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        a {
+          text-decoration: none;
+          color: var(--text-color);
+          background: transparent;
+          border: none;
+          div {
+            border: 1px solid var(--border-color);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            margin-bottom: 10px;
+            @include responsive-sm() {
+              width: 60px;
+              height: 60px;
+              margin-bottom: 7px;
+              margin-left: auto;
+              margin-right: auto;
+            }
+            svg {
+              width: 45px;
+              height: 45px;
+              @include responsive-sm() {
+                width: 30px;
+                height: 30px;
+              }
+            }
+          }
+          p {
+            line-height: 1.4;
+            font-size: 0.9rem;
+            font-weight: 400;
+            @include responsive-sm() {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// .pointWalletContainer {
+//   border: 1px solid var(--shadow-color);
+//   border-radius: 12px;
+//   padding: 9px 15px;
+//   position: relative;
+//   margin-top: 30px;
+//   @include responsive-md() {
+//     width: 500px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     max-width: 90%;
+//   }
+//   div {
+//     display: flex;
+//     align-items: center;
+//     p {
+//       &:first-child {
+//         border-right: 2px solid var(--shadow-color);
+//       }
+//       flex: 0 0 50%;
+//       max-width: 50%;
+//       text-align: center;
+//       padding: 10px 0;
+//       font-size: 1.3rem;
+//       font-weight: 600;
+//       line-height: 1.2;
+//     }
+//   }
+// }
+
+.accountForm {
+  @include flex(flex-start, center, row, wrap);
+  margin: 50px 0 30px;
+  @include responsive-sm() {
+    margin: 50px 0 10px;
+  }
+  .formGroup {
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin-right: 30px;
+    @include responsive-lg() {
+      flex: 0 0 calc(33.3% - 20px);
+      max-width: calc(33.3% - 20px);
+      margin-right: 20px;
+    }
+    @include responsive-md() {
+      flex: 0 0 calc(100%);
+      max-width: calc(100%);
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    label {
+      margin-bottom: 10px;
+      font-weight: 600;
+      display: inline-block;
+    }
+    .fieldStyle {
+      position: relative;
+      z-index: 1;
+      min-height: 53px;
+      border: 1px solid var(--shadow-color);
+      border-radius: 10px;
+      padding: 11px 20px;
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+    }
+    > div {
+      position: relative;
+      > button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 5px;
+        z-index: 2;
+      }
+    }
+  }
+}
+.logoutBtnContainer {
+  @include responsive-sm() {
+    text-align: center;
+  }
+  .logoutBtn {
+    width: 220px;
+    padding: 18px 10px;
+    text-transform: uppercase;
+  }
+}

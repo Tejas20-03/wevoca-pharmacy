@@ -1,0 +1,156 @@
+@import "@/styles/mixins";
+
+.removeSideSpacing {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 80px;
+    @include responsive-sm() {
+        padding-bottom: 120px;
+    }
+    > div > div:last-child {
+        @include responsive-md() {
+            display: block;
+        }
+    }
+}
+
+.prescriptionTitle {
+    color: var(--primary-color);
+    border-left: 3px solid var(--primary-color);
+    line-height: 1;
+    padding-left: 18px;
+}
+
+.uploadText {
+    margin: 40px 0 40px 20px;
+    @include responsive-md() {
+        font-weight: 600;
+    }
+}
+
+.removeContainer {
+    border: none;
+    @include responsive-md() {
+        height: auto;
+        margin: 20px auto 0;
+        width: 100%;
+        @include flex(flex-start, flex-start, column);
+    }
+}
+
+.btnList {
+    @include flex(flex-start, center, row, nowrap);
+    text-align: center;
+    list-style: none;
+    @include responsive-md() {
+        @include flex(center, center);
+    }
+    li {
+        margin-right: 40px;
+        @include responsive-md() {
+            margin: 0 25px;
+        }
+        @include responsive-sm() {
+            margin: 0 15px;
+        }
+        a,
+        button,
+        > div {
+            color: var(--text-color);
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 1.2;
+            text-decoration: none;
+            svg {
+                width: 38px;
+                height: 38px;
+                display: inline-block;
+                margin-bottom: 3px;
+                path {
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                }
+            }
+            p {
+                line-height: 1.13;
+                @include responsive-sm() {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+.selectBox {
+    width: 350px;
+    max-width: 95%;
+    margin: 40px 10px 30px;
+    @include responsive-sm() {
+        width: 100%;
+    }
+    p {
+        padding: 12px 25px;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        font-weight: 600;
+        position: relative;
+        @include responsive-xs() {
+            font-size: 0.9rem;
+        }
+        svg {
+            transition: 200ms ease-in-out;
+            transform: rotate(180deg) translateY(-50%);
+            top: 30%;
+            @include responsive-xs() {
+                top: 12%;
+                width: 15px;
+                height: 15px;
+                right: 15px;
+            }
+        }
+        &.rotateArrow {
+            svg {
+                transform: rotate(0deg) translateY(-50%);
+                top: 50%;
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+        border: 1px solid var(--border-color);
+        border-top: 0;
+        padding: 25px 26px 19px;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        margin-top: -10px;
+        font-size: 0.9rem;
+        overflow: hidden;
+        transition: 200ms ease-in-out;
+        max-height: 200px;
+        @include responsive-xs() {
+            padding: 21px 16px 12px;
+        }
+        &.hide {
+            max-height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border: 1px solid transparent;
+            border-top: none;
+            margin-top: 0;
+        }
+        li {
+            padding: 3px 0 5px;
+            position: relative;
+            padding-left: 35px;
+            @include responsive-xs() {
+                font-size: 0.8rem;
+            }
+            img {
+                width: initial !important;
+                padding: 5px;
+            }
+        }
+    }
+}

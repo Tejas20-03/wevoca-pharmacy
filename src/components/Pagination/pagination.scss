@@ -1,0 +1,26 @@
+.paginationContainer {
+    margin-bottom: 50px;
+    width: 100%;
+    .MuiPagination-ul {
+        justify-content: center;
+        .Mui-disabled {
+            background: var(--bg-disable-color);
+            svg {
+                fill: var(--icon-color);
+            }
+        }
+        .Mui-selected.MuiPaginationItem-page {
+            color: var(--primary-color);
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+        }
+        .MuiPaginationItem-page {
+            color: var(--text-color);
+            font-weight: 600;
+            border: 1px solid var(--border-line-grey2-color);
+            height: 32px;
+            border-radius: 5px;
+        }
+    }
+}

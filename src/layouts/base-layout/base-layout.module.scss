@@ -1,0 +1,20 @@
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  @include flex(flex-start);
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.mainContainer {
+  width: 100%;
+  min-height: 75.5vh;
+  flex-grow: 1;
+  @include flex(flex-start, flex-start);
+  flex-direction: column;
+
+}

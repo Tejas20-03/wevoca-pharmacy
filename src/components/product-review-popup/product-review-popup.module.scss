@@ -1,0 +1,115 @@
+@import '@/styles/mixins';
+
+.cancelOrderContainer {
+  @include flex(flex-start, flex-start, row, wrap);
+  label {
+    margin: 5px 0;
+    display: inline-block;
+    flex: 0 0 50%;
+    max-width: 50%;
+    @include responsive-md() {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    p {
+      @include flex(flex-start, center, row);
+      cursor: pointer;
+      @include responsive-md() {
+        font-size: 0.8rem;
+      }
+      svg {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.voucherPopupContainerContent {
+  padding: 3rem 2rem 3rem !important;
+  @include responsive-sm() {
+    padding: 4rem 2rem 3rem !important;
+  }
+}
+.reviewContent {
+  width: 100%;
+  .reviewWrapper {
+    @include flex(space-between, center, row, nowrap);
+    @include responsive-2xs() {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.feedbackForm {
+  width: 100% !important;
+  max-width: 100% !important;
+  .formGroup {
+    width: 100%;
+    .reviewDetailIndication {
+      @include flex(space-between, center, row, nowrap);
+      width: 100%;
+      span {
+        flex: 1;
+      }
+      div {
+        text-align: right;
+        font-size: 0.8rem;
+        color: #a2a5ab;
+      }
+    }
+    textarea {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 150px;
+      margin-bottom: 0;
+    }
+  }
+  .formSubmitWrap {
+    margin-top: 30px !important; 
+    p {
+      margin-bottom: 20px;
+      text-align: center;
+      color: var(--error-color);
+
+    } 
+    .submitReviewBtn {
+      margin-top: 0;
+      &.unstyled {
+        background-color: var(--bg-color-darker);
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.reviewStars {
+  svg {
+    fill: var(--primary-color) !important;
+  }
+}
+
+.productTitleWrapper {
+  display: flex;
+  align-items: center;
+  > div {
+    &:last-child {
+      flex: 1;
+    }
+  }
+  img {
+    color: transparent;
+    padding: 8px;
+    border: 1px solid #dadada;
+    border-radius: 16px;
+    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 0.7rem;
+  margin: 2px 0;
+  text-wrap: wrap;
+  width: 150px;
+}

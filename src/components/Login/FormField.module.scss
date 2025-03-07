@@ -1,0 +1,52 @@
+@import "@/styles/mixins";
+
+.Form {
+    @include flex(center, center, column);
+    margin: 20px 0 10px;
+    width: 350px;
+    max-width: 95%;
+    input {
+        border: 1px solid var(--shadow-color);
+        padding: 18px 20px;
+        border-radius: 14px;
+        background: transparent;
+        width: 350px;
+        max-width: 95%;
+        margin-bottom: 14px;
+        outline: none;
+        &:active {
+            border-color: var(--primary-color);
+        }
+        &:focus {
+            border-color: var(--primary-color);
+        }
+    }
+    textarea {
+        border: 1px solid var(--shadow-color);
+        padding: 18px 20px;
+        border-radius: 14px;
+        background: transparent;
+        width: 350px;
+        max-width: 95%;
+        margin-bottom: 14px;
+        outline: none;
+        &:active {
+            border-color: var(--primary-color);
+        }
+        &:focus {
+            border-color: var(--primary-color);
+        }
+    }
+    button[type="submit"] {
+        width: 180px;
+        max-width: 95%;
+        padding: 16px;
+        border-radius: 12px;
+        border: none;
+        background: var(--primary-color);
+        color: var(--text-color-alt);
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-top: 40px;
+    }
+}

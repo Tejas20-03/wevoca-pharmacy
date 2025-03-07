@@ -1,0 +1,115 @@
+@import "@/styles/mixins";
+
+
+.descriptionSectionGroup {
+    .btnGroup {
+      margin-bottom: 30px;
+      position: sticky;
+      top: 110px;
+      background-color: white;
+      padding: 20px 0;
+      @include responsive-lg() {
+        padding: 10px 0;
+        top: 75px;
+        flex-flow: nowrap;
+        display: flex;
+        overflow-x: auto;
+      }
+      @include responsive-sm() {
+        top: 125px;
+      }
+      /* width */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      &:empty {
+        display: none;
+      }
+      button {
+        border: 1px solid var(--border-color);
+        background: transparent;
+        color: var(--text-color);
+        border-bottom-width: 3px;
+        border-bottom-color: var(--primary-color);
+        padding: 15px 20px;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-right: 20px;
+        transition: 200ms ease-in-out;
+        @include responsive-lg() {
+          white-space: nowrap;
+        }
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        &.active {
+          background: var(--primary-color);
+          color: var(--text-color-alt);
+        }
+        @include responsive-lg() {
+          padding: 12px 15px;
+          font-size: 0.9rem;
+          font-weight: 500;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  .descriptionWrapper {
+    .descriptionWrapper2 {
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 70px;
+        @include responsive-sm() {
+          margin-bottom: 40px;
+        }
+      }
+      .descriptionWrapper3 {
+        margin-bottom: 20px;
+        p {
+          margin-bottom: 10px;
+          @include responsive-lg() {
+            font-size: 0.9rem;
+          }
+        }
+        ol, ul {
+          padding-left: 15px;
+          margin-bottom: 10px;
+          li {
+            padding: 4px 0;
+          }
+        }
+      }
+    }
+    .productTitle {
+      color: var(--text-color);
+      line-height: 1;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin: 20px 0;
+      @include responsive-lg() {
+        font-size: 1.3rem;
+      }
+      @include responsive-sm() {
+        // text-align: center;
+        line-height: 1.4;
+      }
+    }
+    .productSubTitle {
+      color: var(--text-color);
+      line-height: 1;
+      font-weight: 500;
+      font-size: 1.2rem;
+      margin: 10px 0;
+      @include responsive-lg() {
+        font-size: 1rem;
+      }
+      @include responsive-sm() {
+        // text-align: center;
+        line-height: 1.4;
+      }
+    }
+  }

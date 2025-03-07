@@ -1,0 +1,123 @@
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.slide {
+  width: 80vw;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  aspect-ratio: 3.21/1;
+  margin-right: 10px;
+
+  @include responsive-sm() {
+    margin-bottom: 0;
+    aspect-ratio: 2.61/1;
+  }
+}
+.bannerSlider {
+  width: 90%;
+  margin: 0 auto;
+  > button {
+    margin: 0 10px;
+    @include ButtonReset();
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    svg {
+      cursor: pointer;
+      opacity: 0.5;
+      transition: 200ms ease-in-out;
+      &:hover {
+        opacity: 1;
+      }
+      @include responsive-sm() {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+.activeBullet {
+  background-color: var(--primary-color) !important;
+  width: 25px !important;
+  height: 10px !important;
+  border-radius: 10px;
+  opacity: 1 !important;
+  position: relative;
+}
+
+.swiperContainer {
+  display: block;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+  &.swiperContainerDesktop {
+    display: block;
+  }
+  &.swiperContainerMobile {
+    display: none;
+  }
+  @include responsive-sm() {
+    &.swiperContainerDesktop {
+      display: none;
+    }
+    &.swiperContainerMobile {
+      display: block;
+      aspect-ratio: 16/2;
+    }
+  }
+}
+
+.btnGroup {
+  @include responsive-lg() {
+    max-width: 100%;
+  }
+  @include responsive-lg() {
+    max-width: 90%;
+  }
+  @include responsive-sm() {
+    display: none;
+  }
+  > button {
+    margin: 0 10px;
+    border: none;
+    background: transparent;
+    outline: none;
+    z-index: 4;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    @include ButtonReset();
+    &:last-child {
+      right: 10%;
+      left: initial;
+    }
+    svg {
+      cursor: pointer;
+      opacity: 0.5;
+      transition: 200ms ease-in-out;
+      &:hover {
+        opacity: 1;
+      }
+      @include responsive-sm() {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+.left {
+  left: 40px;
+}
+.right {
+  right: 40px;
+}

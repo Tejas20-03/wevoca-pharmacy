@@ -1,0 +1,34 @@
+@import "@/styles/mixins";
+
+.addressBoxContainer {
+    text-align: center;
+    padding: 20px;
+    p {
+        font-weight: 500;
+        @include responsive-sm() {
+            font-size: 13px;
+        }
+    }
+    .addressBtn,
+    .addressBtn2 {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 10px 0 0;
+        transform: translate(0);
+        border: 1px solid var(--primary-color-darker);
+        border-bottom-width: 3px;
+        background: transparent;
+        color: var(--primary-color-darker);
+        border-radius: 12px;
+        @include responsive-sm() {
+            padding: 8px 20px;
+            font-size: 10px;
+        }
+    }
+    .addressBtn {
+        background: var(--primary-color-darker);
+        color: var(--text-color-alt);
+        margin-left: 10px;
+    }
+}

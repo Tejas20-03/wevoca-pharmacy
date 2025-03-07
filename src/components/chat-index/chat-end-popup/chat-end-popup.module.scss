@@ -1,0 +1,19 @@
+.cartContainer {
+  z-index: 99999999;
+  .cartContainerContent {
+    padding-bottom: 30px !important;
+    display: block !important;
+    p {
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    .gridBox2 {
+      text-align: center;
+      margin: 20px 0 0;
+      button {
+        margin: 0 10px;
+      }
+    }
+  }
+}

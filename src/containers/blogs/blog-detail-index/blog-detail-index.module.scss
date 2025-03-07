@@ -1,0 +1,41 @@
+@import "@/styles/mixins";
+.pageSpacing {
+    padding-bottom: 80px;
+    @include responsive-sm() {
+        padding-bottom: 120px;
+    }
+}
+.blogDetailWrapper {
+    .bannerImg {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 3/1;
+        border-radius: 15px;
+        overflow: hidden;
+        img {
+            object-fit: cover;
+        }
+    }
+    .headingSpace {
+        margin-top: 20px;
+        font-family: Inter, sans-serif !important;
+    }
+}
+.contentPara {
+    a {
+        color: var(--primary-color);
+        span{
+            color: inherit !important;
+        }
+    }
+    span {
+        font-family: Inter, sans-serif !important;
+    }
+    img {
+        height: auto !important;
+        margin: 15px 0;
+        @include responsive-sm() {
+            width: 100% !important;
+        }
+    }
+}

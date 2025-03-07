@@ -1,0 +1,16 @@
+@import "@/styles/mixins";
+
+.promo-code-form {
+    @include responsive-md() {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    input {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    button.btn.primary.btn-half-rounded {
+        right: 15px !important;
+        text-transform: uppercase;
+    }
+}

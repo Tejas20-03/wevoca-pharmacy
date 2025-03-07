@@ -1,0 +1,309 @@
+.botWellnessBox {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  max-height: 90%;
+  overflow: hidden;
+  padding: 1.2rem 1.5rem 1rem;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+  border: 0.15rem solid var(--primary-color);
+  background-color: var(--bg-color);
+  overflow: visible !important;
+  position: relative !important;
+  margin-top: 20px;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -23px;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border: 0.15rem solid var(--primary-color);
+    border-bottom: 0;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 80px;
+    height: 30px;
+    background: white;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom: 0;
+  }
+  .botWellnessBoxHead {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  .botWellnessBoxBody {
+    z-index: 1;
+    position: relative;
+  }
+}
+
+.bot {
+  text-align: left;
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  border: 1px solid #e8ecf2;
+  border-radius: 5px;
+  padding: 0 10px 10px;
+  margin: 20px 0 10px;
+  > button {
+    display: block;
+    width: 100%;
+    margin: 10px 0 0px;
+  }
+}
+
+.userChatDetail {
+  margin: 20px 0 0;
+  li {
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    &.question {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      .agentChat {
+        background: #f0f0f0;
+        margin: 0 30px 10px 10px;
+        padding: 10px;
+        border-radius: 8px;
+        flex: 1;
+        .agentChatImage {
+          position: relative;
+          aspect-ratio: 16 / 9;
+          img {
+            border-radius: 6px;
+            object-fit: contain;
+            object-position: left;
+          }
+        }
+      }
+      .modalLogo {
+        width: 30px;
+        height: 30px;
+        position: relative;
+      }
+      span {
+        &:last-child {
+          text-align: left;
+          list-style: none;
+          font-size: 0.9rem;
+          font-weight: 600;
+          display: block;
+          margin: 0;
+          overflow-wrap: break-word;
+        }
+        &:first-child {
+          text-align: left;
+          list-style: none;
+          font-size: 0.8rem;
+          font-weight: 500;
+          display: block;
+          margin: 0 0 8px;
+          // font-style: italic;
+        }
+      }
+    }
+    &.answer {
+      background: var(--primary-color);
+      color: white;
+      margin: 10px 0 10px 30px;
+      .agentChat {
+        border-radius: 8px;
+        text-align: left;
+        display: block;
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        max-width: 100%;
+        p {
+          overflow-wrap: break-word;
+        }
+        span {
+          display: inline-block;
+          margin-bottom: 5px !important;
+        }
+        .agentChatImage {
+          position: relative;
+          aspect-ratio: 16 / 9;
+          img {
+            border-radius: 6px;
+            object-fit: contain;
+            object-position: right;
+          }
+        }
+      }
+      > span {
+        &:last-child {
+          text-align: right;
+          list-style: none;
+          font-size: 0.9rem;
+          font-weight: 600;
+          display: block;
+          margin: 0;
+          overflow-wrap: break-word;
+        }
+        &:first-child {
+          text-align: right;
+          list-style: none;
+          font-size: 0.8rem;
+          font-weight: 500;
+          display: block;
+          // margin: 0 0 8px;
+          // font-style: italic;
+        }
+      }
+    }
+  }
+}
+
+.initialQuestionMessage {
+  margin: 20px 0 0;
+  li {
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    ol {
+      padding: 5px 0 0 20px;
+      li {
+        display: list-item;
+        padding: 5px;
+      }
+    }
+    &.question {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      .agentChat {
+        background: #eff7e4;
+        margin: 0 30px 10px 10px;
+        padding: 10px;
+        border-radius: 8px;
+        flex: 1;
+        .timing {
+          text-align: right;
+          color: var(--text-color-lighter);
+        }
+        .chatBotChildQuestion {
+          text-align: left;
+          list-style: none;
+          font-size: 0.9rem;
+          font-weight: 600;
+          display: block;
+          margin: 0;
+          overflow-wrap: break-word;
+          padding: 0;
+          a {
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+.botChatDetail {
+  margin: 20px 0 0;
+  &.chatWrapper {
+    margin: 0;
+  }
+  button {
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    &.question,
+    &.chatWithAgent {
+      background: var(--primary-color);
+      margin: 10px 30px 10px 0;
+      color: var(--text-color-alt);
+      width: 80%;
+      margin-right: 0;
+      padding: 12px;
+      p {
+        &:first-child {
+          list-style: none;
+          font-size: 1rem;
+          font-weight: 500;
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+    // &.chatWithAgent {
+    //   p {
+    //     font-size: 0.8rem;
+    //   }
+    // }
+  }
+  div {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 8px;
+    &.answer {
+      background: var(--primary-color);
+      color: white;
+      margin: 10px 0 10px 30px;
+      margin-left: auto;
+      span {
+        text-align: right;
+        list-style: none;
+        font-size: 0.8rem;
+        font-weight: 500;
+        display: block;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+.chatBotWrapper {
+  margin: 0;
+}
+
+.childQuestion {
+  background: var(--primary-color);
+  margin: 10px 30px 10px 0;
+  color: var(--text-color-alt);
+  width: 80%;
+  margin-right: 0;
+  padding: 12px;
+  div {
+    text-align: left;
+  }
+}
+
+.chatEnded {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  .agentChat {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    span {
+      margin: 0;
+      border: 1px solid #d2d1d1;
+      padding: 10px 20px;
+      border-radius: 50px;
+      background: white;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import "@/styles/mixins";
+
+.product-breadcrumb {
+    margin: 80px 0 0 -20px;
+    &.threeItems {
+        .MuiBreadcrumbs-li:nth-of-type(3)::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    .MuiBreadcrumbs-ol {
+        display: inline-flex;
+        position: relative;
+        .MuiBreadcrumbs-li {
+            position: relative;
+            line-height: 1;
+            svg {
+                width: 12px;
+                height: 12px;
+            }
+            a,
+            p {
+                margin: 0 10px;
+                // text-transform: uppercase;
+                color: var(--text-color);
+                font-weight: 300;
+                text-decoration: none;
+                box-shadow: 0px;
+                transition: 200ms ease-in-out;
+                font-size: 0.9rem;
+                @include responsive-sm() {
+                    font-size: 0.8rem;
+                    line-height: 1.9;
+                }
+                &:hover {
+                    box-shadow: 0 1px 0 var(--text-color);
+                }
+            }
+            p {
+                box-shadow: none;
+                color: var(--text-color);
+                &:hover {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
+
+.MuiBreadcrumbs-separator {
+    display: none !important;
+}
+
+.deal-breadcrumb {
+    margin: 20px 0 30px -10px;
+    @include responsive-sm() {
+        margin: 20px 0 20px 0;
+    }
+}

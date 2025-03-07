@@ -1,0 +1,17 @@
+@import '@/styles/mixins';
+.container {
+  width: 100%;
+  aspect-ratio: 4.37/1;
+  // background-color: var(--bg-color); // #E9E9E9;
+
+  height: auto;
+  > div {
+    position: unset !important;
+  }
+  img {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
+}

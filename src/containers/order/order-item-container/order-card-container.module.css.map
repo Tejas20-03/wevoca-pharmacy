@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACP,MAAM,EAAE,WAAW;CAOtB;;AARD,AAEI,UAFM,CAEN,EAAE,CAAC;EACC,SAAS,EAAE,MAAM;CACpB;;AAJL,AAKI,UALM,CAKN,CAAC,CAAC;EACE,KAAK,EAAE,4BAA4B;CACtC",
+
+    "sources": [
+        "order-card-container.module.scss"
+    ],
+    "names": [],
+    "file": "order-card-container.module.css"
+}

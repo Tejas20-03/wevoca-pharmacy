@@ -1,0 +1,139 @@
+@import "./variables";
+
+// Media Queries
+@mixin responsive-custom($breakpoint) {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin responsive-0xs() {
+  @media only screen and (max-width: 280px) {
+    @content;
+  }
+}
+@mixin responsive-xs() {
+  @media only screen and (max-width: 320px) {
+    @content;
+  }
+}
+@mixin responsive-2xs() {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin responsive-sm() {
+  @media only screen and (max-width: 576px) {
+    @content;
+  }
+}
+@mixin responsive-md() {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin responsive-lg() {
+  @media only screen and (max-width: 992px) {
+    @content;
+  }
+}
+@mixin responsive-xl() {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin responsive-2xl() {
+  @media only screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
+// Custom Mixins
+@mixin page-padding-vertical {
+  @include padding-vertical(2rem);
+}
+@mixin page-padding-horizontal {
+  @include padding-horizontal(5rem);
+  @include responsive-md() {
+    @include padding-horizontal(3rem);
+  }
+  @include responsive-sm() {
+    @include padding-horizontal(1.5rem);
+  }
+}
+@mixin section-max-width($is-responsive-2xl-100percent: false) {
+  width: $section-max-width-value;
+  @if $is-responsive-2xl-100percent {
+    @include responsive-2xl() {
+      width: 100%;
+    }
+  }
+}
+@mixin limit-text-to-defined-number-of-lines($numberOfLines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $numberOfLines;
+  line-clamp: $numberOfLines;
+  -webkit-box-orient: vertical;
+}
+
+// Utility CSS
+@mixin padding-vertical($val) {
+  padding-top: $val;
+  padding-bottom: $val;
+}
+@mixin padding-horizontal($val) {
+  padding-left: $val;
+  padding-right: $val;
+}
+@mixin margin-vertical($val) {
+  margin-top: $val;
+  margin-bottom: $val;
+}
+@mixin margin-horizontal($val) {
+  margin-left: $val;
+  margin-right: $val;
+}
+@mixin transition($delay: 200ms, $ease-function: ease-in-out) {
+  transition: all $delay $ease-function;
+}
+@mixin box-shadow($x: 0px, $y: 0px, $blur: 5px) {
+  -webkit-box-shadow: $x $y $blur var(--shadow-color);
+  -moz-box-shadow: $x $y $blur var(--shadow-color);
+  box-shadow: $x $y $blur var(--shadow-color);
+}
+@mixin flex($justify-content: center, $align-items: center, $flex-direction: row, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+  flex-wrap: $wrap;
+}
+
+@mixin border($px: 2px, $color: var(--border-line-grey-color), $type: solid) {
+  border: $px $type $color;
+}
+
+@mixin border-radius($radius: 0.4rem) {
+  border-radius: $radius;
+}
+
+@mixin list-style() {
+  list-style: none;
+}
+
+@mixin ButtonReset() {
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+@mixin animate($animation, $duration, $method, $iteration, $direction) {
+  animation: $animation $duration $method $iteration, $direction;
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}

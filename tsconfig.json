@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@mui/lab/*": ["node_modules/@mui/lab/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Product/product-expected-delivery-full-width-banner/product-expected-delivery-full-width-banner.module.scss", "src/components/Address/Modal/Selected-address/normal-address-modal/Normal-Address-Modal-Selected.tsx", "next.config.mjs"],
+  "exclude": ["node_modules"]
+}

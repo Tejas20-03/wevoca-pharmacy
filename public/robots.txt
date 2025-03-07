@@ -1,0 +1,17 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /orders
+Disallow: /account
+
+# test-bot
+User-agent: test-bot
+Allow: /
+
+# black-listed-bot
+User-agent: black-listed-bot
+Disallow: /orders
+Disallow: /account
+
+# Host
+Host: http://localhost:3000

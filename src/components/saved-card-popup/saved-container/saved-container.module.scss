@@ -1,0 +1,67 @@
+@import "@/styles/mixins";
+.cardLabel {
+    position: relative;
+    cursor: pointer;
+
+    flex: 0 0 calc(50% - 5px);
+    max-width: calc(50% - 5px);
+    @include responsive-sm() {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    > button {
+        all: unset;
+        cursor: pointer;
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        z-index: 3;
+    }
+}
+.selectedCardBox {
+    padding: 1.5rem 1.3rem;
+    margin-top: 0;
+    // z-index: 2;
+    position: relative;
+    height: 100%;
+    @include responsive-md() {
+        padding: 1.2rem 1rem;
+    }
+    &.activeBox {
+        border: 1px solid var(--primary-color);
+    }
+    button {
+        z-index: 3;
+    }
+    .cardContainer {
+        @include flex(center, flex-start, column);
+        > p {
+            @include flex(flex-start, center, row);
+            font-weight: 600;
+            svg:first-child {
+                margin-right: 13px;
+            }
+            svg:last-child {
+                margin-right: 8px;
+            }
+        }
+        > div {
+            @include flex(flex-start, center, row);
+            padding-left: 4.8rem;
+            padding-top: 0.6rem;
+            @include responsive-md() {
+                padding-left: 1.7rem;
+            }
+            p {
+                @include responsive-md() {
+                    font-size: 0.8rem;
+                    margin: 0 8px;
+                }
+            }
+        }
+    }
+}

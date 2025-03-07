@@ -1,0 +1,76 @@
+@import "@/styles/mixins";
+
+.container {
+  @include flex(center, center, column);
+  flex: 1;
+  z-index: 0;
+  @include responsive-md() {
+    @include flex(flex-start, flex-start, row, wrap);
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 6px 0 3px;
+    background: white;
+  }
+  @include responsive-2xs() {
+    margin-bottom: 25px;
+    position: relative;
+  }
+  .titleContainer {
+    text-align: center;
+    @include responsive-md() {
+      text-align: left;
+      flex: 1;
+      margin-left: 10px;
+    }
+    @include responsive-2xs() {
+      margin-left: 4px;
+    }
+  }
+  .titleStatus {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 10px 0 4px;
+    @include responsive-md() {
+      margin: 0;
+    }
+    @include responsive-2xs() {
+      font-size: 0.8rem;
+    }
+  }
+  .subtitle {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    margin: 0 0 5px;
+    text-align: center;
+    @include responsive-xl() {
+      font-size: 0.7rem;
+    }
+    @include responsive-md() {
+      margin: 0;
+      text-align: left;
+    }
+  }
+  .time {
+    font-size: 0.7rem;
+    color: var(--text-color-lighter);
+    @include responsive-2xs() {
+      font-size: 0.6rem;
+      position: absolute;
+      bottom: -11px;
+      left: 43px;
+    }
+  }
+}
+.innerContainer {
+  width: 40%;
+  @include flex(center, center, column);
+  background-color: var(--bg-color);
+  @include responsive-md() {
+    width: initial;
+  }
+  svg {
+    width: 38px;
+    height: 38px;
+  }
+}

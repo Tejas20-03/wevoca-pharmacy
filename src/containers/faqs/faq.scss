@@ -1,0 +1,48 @@
+@import "@/styles/mixins";
+
+.faq-grid {
+    margin-bottom: 8rem;
+    column-count: 2;
+    column-gap: 40px;
+    @include responsive-lg() {
+        column-gap: 20px;
+    }
+    @include responsive-md() {
+        column-count: 1;
+    }
+    @include responsive-sm() {
+        margin-bottom: 0;
+    }
+    & .grid_items {
+        display: inline-block;
+        margin-bottom: 30px;
+        width: 100%;
+        @include responsive-sm() {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        > div {
+            .MuiAccordion-root {
+                margin-bottom: 20px;
+                border: 1px solid var(--border-color);
+                border-radius: 10px;
+                &::before {
+                    content: none;
+                }
+                ul {
+                    margin-left: 20px;
+                }
+                h2 {
+                    font-weight: 500;
+                }
+                p {
+                    font-size: 0.8rem !important;
+                    font-family: Inter, sans-serif !important;
+                    line-height: 1.6 !important;
+                    padding: 0 0 10px;
+                }
+            }
+        }
+    }
+}

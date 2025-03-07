@@ -1,0 +1,81 @@
+@import '@/styles/mixins';
+
+
+
+.userChatDetail {
+  margin: 20px 0 0;
+  li {
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    &.question {
+      display: flex;
+      padding: 0;
+      .agentChat {
+        background: #f0f0f0;
+        margin: 0 30px 10px 10px;
+        padding: 10px;
+        border-radius: 8px;
+        flex: 80%;
+        max-width: 80%;
+        text-align: left;
+        p {
+          overflow-wrap: break-word;
+        }
+        span{
+          display: inline-block;
+          margin-bottom: 5px !important;
+        }
+        .agentChatImage {
+          position: relative;
+          aspect-ratio: 16 / 9;
+          img {
+            border-radius: 6px;
+          }
+        }
+      }
+      .modalLogo {
+        width: 30px;
+        height: 30px;
+        position: relative;
+      }
+      span {
+        &:last-child {
+          text-align: left;
+          list-style: none;
+          font-size: 0.9rem;
+          font-weight: 600;
+          display: block;
+          margin: 0;
+          overflow-wrap: break-word;
+        }
+        &:first-child {
+          text-align: left;
+          list-style: none;
+          font-size: 0.8rem;
+          font-weight: 500;
+          display: block;
+          margin: 0;
+          // font-style: italic;
+        }
+      }
+    }
+    &.answer {
+      background: var(--primary-color);
+      color: white;
+      margin: 0 0 10px 30px;
+      text-align: left;
+      span {
+        &:first-child {
+          text-align: right;
+          list-style: none;
+          font-size: 0.8rem;
+          font-weight: 500;
+          display: block;
+          margin-bottom: 5px !important;
+          text-align: left;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import "@/styles/mixins";
+
+.bannerContainer {
+    margin-bottom: 40px;
+}
+
+.BrandContainer {
+    @include flex(flex-start, flex-start, row, wrap);
+}

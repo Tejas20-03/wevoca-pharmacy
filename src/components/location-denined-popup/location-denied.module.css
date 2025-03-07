@@ -1,0 +1,47 @@
+.cartContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cartContainer .cartBoxContainer {
+  width: 550px;
+}
+
+.cartContainer .cartContainerContent {
+  border: none;
+  border-radius: 0;
+}
+
+.cartContainer .modalHeadStyling {
+  display: none !important;
+}
+
+.permissionGrid h2 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.permissionGrid .points {
+  margin: 0 40px 20px 30px;
+}
+
+.permissionGrid .gotItBtn {
+  text-align: right;
+}
+
+.permissionGrid .gotItBtn button {
+  background: var(--primary-color) !important;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+}
+/*# sourceMappingURL=location-denied.module.css.map */

@@ -1,0 +1,26 @@
+@import "@/styles/mixins";
+
+.dealsCardItems {
+  flex: 1 0 30%;
+  @include flex();
+
+  margin: 0 20px 20px 0;
+  @include responsive-md() {
+    flex: 1 0 45%;
+    margin: 0 10px 10px 0;
+  }
+
+  @include responsive-2xs() {
+    flex: 1 0 95%;
+    margin: 0 auto 20px auto !important;
+  }
+  .dealsCardItem {
+    display: inline-block;
+    width: 100%;
+    .dealsImages {
+      img {
+        border-radius: 10px;
+      }
+    }
+  }
+}

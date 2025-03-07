@@ -1,0 +1,83 @@
+@import "@/styles/mixins";
+
+.singleItemContainer {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding: 8px 21px 8px 10px;
+    @include flex(flex-start, flex-start);
+    .closeBtn {
+        position: absolute;
+        top: 5px;
+        right: -14px;
+        @include ButtonReset();
+        padding: 0;
+        svg {
+            @include responsive-0xs() {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+    .productImage {
+        padding: 8px;
+        border: 1px solid var(--border-line-grey-color); // #DADADA
+        border-radius: 12px;
+        line-height: 1;
+        flex: 0 0 33.3%;
+        max-width: 33.3%;
+        @include responsive-md() {
+            flex: 0 0 15%;
+            max-width: 15%;
+        }
+        @include responsive-sm() {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+        a {
+            position: relative;
+            height: 72px;
+            display: inline-block;
+            width: 100%;
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+    .productContent {
+        padding-left: 14px;
+        flex: 0 0 66.6%;
+        max-width: 66.6%;
+        @include responsive-md() {
+            flex: 0 0 85%;
+            max-width: 85%;
+        }
+        @include responsive-sm() {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+        .productTitle {
+            font-weight: 700;
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+        .productCategory {
+            color: var(--text-color-lighter);
+            margin: 4px 0;
+        }
+        .productPriceQuantityBox {
+            @include flex(space-between, center);
+            .productPrice {
+                font-weight: 700;
+            }
+            .regularPrice {
+                color: var(--text-color-lightest);
+                font-size: 0.8rem;
+                text-decoration: line-through;
+                margin-left: 5px;
+                font-weight: 700;
+            }
+        }
+    }
+}

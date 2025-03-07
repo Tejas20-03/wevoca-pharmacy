@@ -1,0 +1,96 @@
+.titleContainer {
+  padding: 0 0 20px;
+  -webkit-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
+}
+
+.titleContainer .content,
+.titleContainer .contentShowFull {
+  height: 150px;
+  overflow: hidden;
+}
+
+.titleContainer .content .aboutHeading,
+.titleContainer .contentShowFull .aboutHeading {
+  font-size: 1.3rem;
+}
+
+.titleContainer .content h1,
+.titleContainer .contentShowFull h1 {
+  margin-bottom: 15px;
+}
+
+.titleContainer .content p,
+.titleContainer .contentShowFull p {
+  padding: 0 0 15px;
+  font-size: 0.8rem;
+}
+
+.titleContainer .content h2,
+.titleContainer .contentShowFull h2 {
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.2;
+  font-size: 1.1rem;
+  padding-bottom: 5px;
+}
+
+.titleContainer .content ul,
+.titleContainer .contentShowFull ul {
+  list-style: none;
+  padding: 10px 0 0;
+}
+
+.titleContainer .content ul li,
+.titleContainer .contentShowFull ul li {
+  padding: 5px 0;
+  font-size: 0.8rem;
+}
+
+.titleContainer .content ul li strong,
+.titleContainer .contentShowFull ul li strong {
+  color: var(--text-color);
+}
+
+.titleContainer .contentShowFull {
+  height: 100%;
+}
+
+.titleContainer .SeeMoreBtn,
+.titleContainer .SeeMoreBtnOpened {
+  width: 100%;
+  padding: 50px 0 20px;
+  text-align: center;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, white), to(transparent));
+  background: linear-gradient(360deg, white 50%, transparent);
+  margin-top: -50px;
+  position: relative;
+  z-index: 3;
+}
+
+.titleContainer .SeeMoreBtn button,
+.titleContainer .SeeMoreBtnOpened button {
+  border: 2px solid var(--border-color);
+  background: transparent;
+  color: var(--text-color);
+  font-weight: 400;
+  border-color: var(--primary-color);
+  padding: 12px 26px 14px;
+  margin: 0 5px;
+  border-radius: 50px;
+  font-weight: 600;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  font-size: 0.8rem;
+}
+
+.titleContainer .SeeMoreBtnOpened {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background: transparent;
+  margin-top: 0;
+  position: relative;
+  z-index: 3;
+}
+/*# sourceMappingURL=home-about.module.css.map */

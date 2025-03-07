@@ -1,0 +1,21 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx-conf:/etc/nginx/nginx.conf
+      - ./dvago.crt:/etc/nginx/ssl/dvago.crt
+      - ./dvago.key:/etc/nginx/ssl/dvago.key
+      - ./dhparam:/etc/nginx/ssl/dhparam.pem
+    depends_on:
+      - fe0
+  fe0:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production # Set NODE_ENV to production
+    restart: always

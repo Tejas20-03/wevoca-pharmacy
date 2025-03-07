@@ -1,0 +1,27 @@
+@import "@/styles/mixins";
+.container {
+  min-width: 80%;
+  @include flex();
+  @include border(1px);
+  @include border-radius(0.6rem);
+  padding: 1rem 1rem;
+  @include responsive-lg() {
+    padding: 0.7rem 1rem;
+  }
+  & .expectedTime {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 0.7rem;
+    margin-right: 3px;
+  }
+  & .seperator {
+    color: var(--text-color-lightgrey);
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  & .quickDelivery {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.7rem;
+  }
+}

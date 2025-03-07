@@ -1,0 +1,229 @@
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.mobileView {
+  display: none;
+  @include responsive-sm() {
+    display: block;
+  }
+}
+
+.desktopView {
+  display: block;
+  @include responsive-sm() {
+    display: none;
+  }
+}
+
+.container {
+  width: 100%;
+  @include flex(flex-start, flex-start, column, wrap);
+  @include transition();
+  position: relative;
+
+  @include responsive-xs() {
+    padding: 0.75rem 1rem;
+  }
+  @include responsive-2xl() {
+    @include padding-vertical(1rem);
+  }
+  @include responsive-md() {
+    @include padding-vertical(2rem);
+  }
+  @include responsive-sm() {
+    padding-top: 0.7rem;
+    padding-bottom: 1.1rem;
+    background-color: transparent;
+  }
+}
+
+.mainContainer {
+  width: 100%;
+  position: relative;
+  padding: 1rem 0;
+
+  @include responsive-sm() {
+    padding: 1rem;
+    margin: 0 -1rem;
+    width: calc(100% + 2rem);
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  @include responsive-sm() {
+    display: none !important;
+  }
+}
+
+.btnGroup {
+  max-width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-left: 25px;
+
+  [dir="rtl"] & {
+    right: auto;
+    left: 0;
+    margin-right: 0;
+    margin-left: 25px;
+    justify-content: flex-start;
+  }
+
+  > button {
+    margin: 0 10px;
+    @include ButtonReset();
+    cursor: pointer;
+    &:last-child {
+      margin-left: 0;
+    }
+  }
+  @include responsive-sm() {
+    display: none;
+  }
+}
+
+.productSwiper {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 10px 0;
+
+  @include responsive-lg() {
+    max-width: 100%;
+  }
+  @include responsive-md() {
+    max-width: 90%;
+  }
+  @include responsive-sm() {
+    display: none !important;
+  }
+}
+
+.gridItemWrapper {
+  cursor: pointer;
+  width: 12rem;
+  height: 15rem;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    .gridItem {
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+  }
+  > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    z-index: 3;
+  }
+
+  .gridItem {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    background-color: var(--primary-color);
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+    .gridItemImageContainer {
+      width: 100%;
+      height: 9rem;
+      position: relative;
+      border-radius: 12px;
+      margin-bottom: 0.5rem;
+      background: white;
+      padding: 15px;
+      overflow: hidden;
+      aspect-ratio: 1.06/1;
+
+      .gridItemImage {
+        object-fit: cover;
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+    .gridItemText {
+      text-align: center;
+      padding: 5px 10px 15px;
+      font-family: $font-inter;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-color);
+      @include limit-text-to-defined-number-of-lines(2);
+    }
+  }
+  @include responsive-sm() {
+    width: 8.5rem;
+    height: 100%;
+
+    .gridItem {
+      height: 100%;
+      border: none;
+      padding: 12px 8px;
+
+      .gridItemImageContainer {
+        height: 7rem;
+        width: 7rem;
+        margin: auto;
+        border: 1px solid #d2d2d2;
+        padding: 8px;
+      }
+
+      .gridItemText {
+        font-size: 11px;
+        padding: 0;
+        color: var(--text-color);
+      }
+    }
+  }
+  @include responsive-2xs() {
+    width: 7.3rem;
+
+    .gridItem {
+      .gridItemImageContainer {
+        height: 6.1rem;
+        width: 6.1rem;
+      }
+    }
+  }
+}
+
+.grid {
+  display: none;
+  max-width: 80%;
+  margin: 50px auto 0;
+  grid-template-columns: auto auto auto auto;
+  gap: 1rem;
+  justify-content: space-evenly;
+
+  @include responsive-sm() {
+    display: grid;
+    width: 80%;
+    max-width: 80%;
+    margin-top: 23px;
+    grid-template-columns: auto auto auto;
+  }
+
+  @include responsive-2xs() {
+    width: 100%;
+    max-width: 100%;
+    column-gap: 0.2rem;
+    row-gap: 1rem;
+  }
+}
+
+

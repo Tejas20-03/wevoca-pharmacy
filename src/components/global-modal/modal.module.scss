@@ -1,0 +1,79 @@
+@import "@/styles/mixins";
+
+.ModalContainer {
+    overflow: auto;
+    outline: none;
+    .modalBox {
+        width: 750px;
+        max-width: 95%;
+        height: auto;
+        overflow: visible !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 5% auto 5%;
+        outline: none !important;
+        @include keyframes(fadeIn) {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @include animate(fadeIn, 500ms, ease-in-out, 1, forwards);
+        .modalHead {
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
+            border: 0.15rem solid var(--primary-color);
+            border-bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: -60px;
+            .modalLogo {
+                width: 133px;
+                height: 121px;
+                border-top-left-radius: 100%;
+                border-top-right-radius: 100%;
+                background-color: var(--bg-color);
+                padding: 9%;
+                z-index: 30;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                position: relative;
+                img {
+                    width: 59px;
+                    height: 59px;
+                    padding: 30px;
+                }
+            }
+        }
+    }
+    .modalContent {
+        width: 100%;
+        height: auto;
+        max-height: 90%;
+        overflow: hidden;
+        padding: 4rem 1.5rem 1rem;
+        transition: all 0.2s ease-in-out;
+        border-radius: 20px;
+        border: 0.15rem solid var(--primary-color);
+        background-color: var(--bg-color);
+        overflow: visible !important;
+        position: relative !important;
+        display: flex;
+        & .closeBtn {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            @include ButtonReset();
+        }
+    }
+}

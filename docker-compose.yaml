@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    container_name: web
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production # Set NODE_ENV to production
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app
+      - /app/node_modules

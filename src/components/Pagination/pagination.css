@@ -1,0 +1,35 @@
+
+.paginationContainer {
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.paginationContainer .MuiPagination-ul {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.paginationContainer .MuiPagination-ul .Mui-disabled {
+  background: var(--bg-disable-color);
+}
+
+.paginationContainer .MuiPagination-ul .Mui-disabled svg {
+  fill: var(--icon-color);
+}
+
+.paginationContainer .MuiPagination-ul .Mui-selected.MuiPaginationItem-page {
+  color: var(--primary-color);
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+.paginationContainer .MuiPagination-ul .MuiPaginationItem-page {
+  color: var(--text-color);
+  font-weight: 600;
+  border: 1px solid var(--border-line-grey2-color);
+  height: 32px;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=pagination.css.map */

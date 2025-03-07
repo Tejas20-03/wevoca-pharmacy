@@ -1,0 +1,146 @@
+@import "@/styles/mixins";
+.selectedAddressBox {
+    &.activeAddress  {
+        border: 1px solid var(--primary-color);
+    }
+}
+.selectedAddressBox,
+.selectedAddressBox2 {
+    padding: 20px;
+    cursor: pointer;
+    @include responsive-sm() {
+        margin-top: 12px;
+    }
+    button {
+        z-index: 5;
+    }
+    .dvago {
+        gap: 10px;
+        width: 100%
+    }
+    .dvago,
+    .dvago2 {
+        @include flex(flex-start, center);
+        svg {
+            margin: 0;
+            flex: 0 0 7%;
+            max-width: 7%;
+        }
+        p {
+            font-weight: 500;
+            color: var(--primary-color);
+            position: relative;
+        }
+        pointer-events: none;
+        @include responsive-sm() {
+            pointer-events: initial;
+        }
+    }
+    .dvago2 {
+        padding: 20px;
+    }
+    .addressBox,
+    .addressBox2 {
+        @include flex(space-between, center);
+        p {
+            // margin-right: 10px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        .addressTag {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            border: 1px solid var(--border-color);
+            background: transparent;
+            border-bottom-width: 4px;
+            border-bottom-color: var(--primary-color);
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 6px 16px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .addressTag2 {
+            background-color: transparent;
+            color: var(--primary-color);
+            padding: 0;
+            cursor: default;
+            font-family: "Inter", sans-serif !important;
+            font-size: 1.1rem;
+        }
+        pointer-events: none;
+    }
+    .addressBox2 {
+        pointer-events: none;
+        padding: 11px 25px 12px 15px;
+        border-bottom: 1px solid var(--shadow-color);
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        @include responsive-sm() {
+            pointer-events: initial;
+        }
+        .dvago {
+            button {
+                color: var(--text-color);
+                font-weight: 600;
+                font-size: 0.9rem;
+            }
+            svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+}
+
+.selectedAddressBox2 {
+    padding: 0 !important;
+    > button {
+        > svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    .dvago {
+        div {
+            display: flex;
+            align-items: center;
+            svg {
+                flex: initial;
+                max-width: initial;
+            }
+        }
+    }
+}
+
+.closed {
+    display: none !important;
+}
+
+.radioBtn {
+    display: none;
+    &:checked + label {
+        > div {
+            > div {
+                &:nth-child(2) {
+                    p {
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: 4.8px;
+                            transform: translateY(-50%);
+                            width: 9px;
+                            height: 9px;
+                            background: var(--primary-color);
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

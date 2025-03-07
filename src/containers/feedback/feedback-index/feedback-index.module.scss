@@ -1,0 +1,12 @@
+@import "@/styles/mixins";
+.formWrapper {
+    margin-bottom: 120px;
+    @include responsive-sm() {
+        margin-bottom: 20px;
+    }
+}
+.pageSpacing {
+    @include responsive-sm() {
+        padding-bottom: 120px;
+    }
+}

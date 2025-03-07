@@ -1,0 +1,6 @@
+@import "@/styles/mixins";
+
+.dealsCardWrapper {
+    @include flex(flex-start, flex-start, row, wrap);
+    @include list-style();
+}

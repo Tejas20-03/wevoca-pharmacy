@@ -1,0 +1,46 @@
+@import "@/styles/mixins";
+.pageSpacing {
+    padding-bottom: 136px;
+    @include responsive-sm() {
+        padding-bottom: 120px;
+    }
+}
+.blogsGrid {
+    @include flex(flex-start, flex-start, row, wrap);
+}
+
+.btnGroup {
+    margin-bottom: 2rem;
+    display: flex;
+    @include responsive-sm() {
+        flex-wrap: wrap;
+        display: inline-flex;
+        justify-content: center;
+    }
+    button {
+        border: 1px solid var(--border-color);
+        background: transparent !important;
+        color: var(--text-color) !important;
+        font-weight: 400;
+        border-bottom-width: 3px;
+        border-bottom-color: var(--border-color);
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        margin: 0 15px 0 0;
+        transition: 200ms ease-in-out;
+        border-radius: 7px;
+        font-weight: 500;
+        @include responsive-sm() {
+            order: 1;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        &.selectedAddressTypeItem {
+            border-bottom-color: var(--primary-color);
+        }
+    }
+}

@@ -1,0 +1,95 @@
+.categoryMainItems {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    &:last-child {
+        border-bottom: none;
+    }
+    button {
+        all: unset;
+        cursor: pointer;
+        padding: 15px;
+    }
+    a {
+        color: inherit;
+        text-decoration: none;
+        font-size: 14px;
+        flex: 1;
+    }
+}
+
+.cateogries-menu {
+    box-shadow: none;
+    .MuiAccordionDetails-root {
+        padding: 0;
+    }
+    .cateogries-itemLink {
+        p {
+            flex: 1;
+        }
+        button {
+            min-width: initial;
+            all: unset;
+            cursor: pointer;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    }
+    ul {
+        width: 100%;
+        background: var(--primary-color);
+        ul {
+            background: #028e82;
+            ul {
+                background: #028e82;
+            }
+        }
+        &.visible {
+            display: block;
+        }
+    }
+    .submenu {
+        li {
+            .cateogries-menu {
+                border-bottom: 1px solid #fff;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+                background: var(--primary-color);
+                .cateogries-menu {
+                    background: #028e82;
+                    .cateogries-menu {
+                        background: #028e82;
+                    }
+                }
+                .cateogries-itemLink {
+                    a {
+                        color: white;
+                    }
+                    button {
+                        svg {
+                            path {
+                                fill: #fff;
+                            }
+                        }
+                    }
+                }
+                // .cateogries-itemLink + .MuiCollapse-vertical a {
+                //     display: block;
+                // }
+            }
+            &:last-child {
+                > .cateogries-menu {
+                    border-bottom: none;
+                }
+            }
+        }
+        .cateogries-menu.no-submenu a {
+            display: block;
+        }
+    }
+}

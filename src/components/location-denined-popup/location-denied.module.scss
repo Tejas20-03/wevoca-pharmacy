@@ -1,0 +1,36 @@
+.cartContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .cartBoxContainer {
+        width: 550px;
+    }
+    .cartContainerContent {
+        border: none;
+        border-radius: 0;
+    }
+    .modalHeadStyling {
+        display: none !important;
+    }
+}
+
+.permissionGrid {
+    h2 {
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    .points {
+        margin: 0 40px 20px 30px;
+    }
+    .gotItBtn {
+        text-align: right;
+        button {
+            background: var(--primary-color) !important;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            font-weight: 500;
+        }
+    }
+}

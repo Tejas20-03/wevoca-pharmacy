@@ -1,0 +1,89 @@
+@import "@/styles/mixins";
+
+.gridBox2 {
+    text-align: left;
+    margin-top: 30px;
+    padding-left: auto;
+    padding-right: auto;
+    width: 80%;
+    @include responsive-sm() {
+        width: 100%;
+    }
+    .btnGroup {
+        margin-bottom: 30px;
+        button {
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-color);
+            font-weight: 400;
+            border-bottom-width: 3px;
+            border-bottom-color: var(--primary-color);
+            padding: 7px 15px;
+            font-size: 0.7rem;
+            margin: 0 5px;
+            transition: 200ms ease-in-out;
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            &.selectedAddressTypeItem {
+                background: var(--primary-color);
+                color: var(--text-color-alt);
+            }
+        }
+    }
+    .formGroup {
+        margin: 10px 0;
+        input {
+            padding: 14px 10px 14px 15px;
+            width: 100%;
+            margin-bottom: 1px;
+            font-size: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            &:focus {
+                outline: none;
+            }
+        }
+        span {
+            font-size: 0.8rem;
+            color: var(--error-color);
+            font-weight: 500;
+        }
+    }
+    .saveBtn {
+        text-align: center;
+        margin-top: 30px;
+        button {
+            padding: 15px 12px;
+            width: 100%;
+            @include responsive-md() {
+                padding: 18px 12px;
+                width: 50%;
+            }
+            @include responsive-md() {
+                width: 250px;
+                max-width: 90%;
+            }
+        }
+    }
+    .saveBtnBlocked {
+        text-align: center;
+        button {
+            background: grey;
+            cursor: not-allowed;
+            padding: 15px 12px;
+            width: 100%;
+            @include responsive-md() {
+                padding: 18px 12px;
+                width: 50%;
+            }
+            @include responsive-md() {
+                width: 250px;
+                max-width: 90%;
+            }
+        }
+    }
+}

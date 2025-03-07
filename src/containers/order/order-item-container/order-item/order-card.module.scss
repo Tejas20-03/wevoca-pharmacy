@@ -1,0 +1,89 @@
+@import "@/styles/mixins";
+
+.container {
+    width: 100%;
+
+    @include flex(flex-start);
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.iconContainer {
+    & svg {
+        width: 50px;
+        height: 50px;
+        color: var(--bg-color);
+        padding: 10%;
+        border-radius: 20%;
+    }
+}
+.accordionSummary {
+    > div {
+        &:last-child {
+            width: 50px;
+            justify-content: center;
+        }
+    }
+}
+.headingContainer {
+    width: 100%;
+    @include flex(center, flex-start, column);
+
+    & p {
+        color: var(--text-primary);
+        font-size: 1rem;
+    }
+}
+
+.address {
+    @include limit-text-to-defined-number-of-lines(2);
+    font-weight: 600;
+}
+
+.date {
+    font-size: 0.7rem;
+}
+.subHeadingContainer {
+    @include flex();
+    @include responsive-2xs() {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    & .subHeading {
+        font-size: 0.8rem;
+        color: var(--text-color-lighter);
+        &:first-child {
+            @include responsive-2xs() {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    }
+    & svg {
+        color: var(--text-color-lighter);
+        margin: 0 10px 0 20px;
+        @include responsive-2xs() {
+            margin: 2px 7px 0 0;
+        }
+    }
+}
+
+.accordionHeader {
+    border: 1px solid var(--border-color);
+    border-radius: 0 !important;
+
+    margin-bottom: 10px !important;
+    &::before {
+        content: none;
+    }
+}
+
+.descriptionContaine {
+    width: 100%;
+}
+
+.AccordionDetailsContainer {
+    width: 100%;
+    @include flex();
+    gap: 1vw;
+}

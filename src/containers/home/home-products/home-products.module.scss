@@ -1,0 +1,135 @@
+@import "@/styles/mixins";
+
+.container {
+  width: 100%;
+  
+  @include padding-vertical(1rem);
+  @include flex();
+  flex-direction: column;
+  @include transition();
+
+  @include responsive-sm() {
+    padding-top: 0.7rem;
+    padding-bottom: 1.1rem;
+  }
+  @include responsive-xs() {
+    padding: 2rem 1rem 1rem;
+  }
+}
+.mainContainer {
+  position: relative;
+  @include responsive-sm() {
+    padding-right: 0;
+  }
+  h1 {
+    @include responsive-sm() {
+      color: var(--text-color) !important;
+      font-weight: 600;
+      margin-bottom: 1.3rem;
+    } 
+  }
+}
+.productSwiper {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 10px 0;
+  @include responsive-lg() {
+    max-width: 100%;
+  }
+  @include responsive-md() {
+    max-width: 90%;
+  }
+  @include responsive-sm() {
+    padding-right: 20px;
+    padding-bottom: 2px;
+  }
+  > div {
+    > div {
+      height: auto;
+      > li {
+        height: 100%;
+        margin: 0;
+      }
+    }
+  }
+}
+.titleWrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  
+}
+.slide {
+  .productCard {
+    background: (--var(--primary-color));
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 0;
+    border: 1px solid (--var(--primary-color));
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    img {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+  .emptyUl {
+    list-style: none;
+    display: inline-flex;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.btnGroup {
+  max-width: 90%;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 auto 20px auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 25px;
+  [dir="rtl"] & {
+    right: auto;
+    left: 0;
+    margin-right: 0;
+    margin-left: 25px;
+    justify-content: flex-start;
+    button svg {
+      transform: rotate(180deg);
+    }
+  }
+  @include responsive-lg() {
+    max-width: 100%;
+  }
+  @include responsive-lg() {
+    max-width: 90%;
+  }
+  @include responsive-sm() {
+    display: none;
+  }
+  > button {
+    margin: 0 10px;
+    @include ButtonReset();
+    &:last-child {
+      margin-right: 0;
+      margin-left: 0;
+    }
+    svg {
+      cursor: pointer;
+      @include responsive-sm() {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

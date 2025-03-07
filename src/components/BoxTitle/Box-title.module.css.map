@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAC;EACN,KAAK,EAAE,iBAAiB;EACxB,SAAS,EAAE,iBAAiB;EAC5B,WAAW,EAAE,cAAc;EAC3B,aAAa,EAAE,eAAe;CACjC",
+    "sources": [
+        "Box-title.module.scss"
+    ],
+    "names": [],
+    "file": "Box-title.module.css"
+}

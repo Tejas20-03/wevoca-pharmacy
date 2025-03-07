@@ -1,0 +1,54 @@
+@import "@/styles/mixins";
+.DeliveryAddressBox {
+    > button:last-child {
+        @include responsive-md() {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            margin-top: 15px;
+        }
+    }
+}
+.addressBox {
+    padding-right: 190px;
+    @include flex(flex-start, center);
+    @include responsive-lg() {
+        @include flex(flex-start, flex-start, column, wrap);
+        padding-right: 100px;
+    }
+    @include responsive-md() {
+        @include flex(flex-end, center, row-reverse, nowrap);
+        padding-right: 10px;
+    }
+    @include responsive-sm() {
+        @include flex(flex-end, flex-start, column, wrap);
+        padding-right: 10px;
+    }
+    .addressTag {
+        color: var(--text-color);
+        border: 1px solid var(--shadow-color);
+        padding: 5px 15px;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        border-bottom-width: 3px;
+        border-bottom-color: var(--primary-color);
+        display: inline-block;
+        @include responsive-sm() {
+            margin-bottom: 10px;
+        }
+    }
+    .completeAddress {
+        margin-left: 20px;
+        color: var(--primary-color);
+        font-weight: 500;
+        @include responsive-lg() {
+            margin-left: 2px;
+            margin-top: 10px;
+        }
+        @include responsive-md() {
+            margin-top: 0;
+            margin-right: 10px;
+        }
+    }
+}

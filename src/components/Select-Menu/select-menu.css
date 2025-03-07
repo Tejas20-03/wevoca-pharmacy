@@ -1,0 +1,119 @@
+.selectBox {
+  position: relative;
+}
+
+.selectBox svg {
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  font-size: 20px;
+  color: black;
+  z-index: 1;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.react-select__option123__control {
+  position: relative;
+  z-index: 1;
+  min-height: 53px;
+  border: 1px solid var(--shadow-color);
+  border-radius: 10px;
+  padding: 11px 20px;
+  width: 100%;
+}
+
+.react-select__option123__control:hover {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border-color: var(--shadow-color);
+}
+
+.react-select__option123__control.react-select__option123__control--is-focused {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.react-select__option123__control .react-select__option123__value-container {
+  padding: 0;
+}
+
+.react-select__option123__control .react-select__option123__value-container > input {
+  position: absolute;
+}
+
+.react-select__option123__control .react-select__option123__value-container .react-select__option123__placeholder {
+  font-size: 0.8125rem;
+}
+
+.react-select__option123__control .selectedItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.9rem;
+}
+
+.react-select__option123__menu {
+  margin: 0px 0 0;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border-top: 0;
+  border: 1px solid var(--shadow-color);
+  border-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  z-index: 2;
+  padding-top: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.react-select__option123__menu::before, .react-select__option123__menu::after {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: -1px;
+  width: 1px;
+  height: 30px;
+  background: var(--shadow-color);
+}
+
+.react-select__option123__menu::after {
+  left: initial;
+  right: 0px;
+  -webkit-transform: translateX(1px);
+          transform: translateX(1px);
+}
+
+.react-select__option123__menu .react-select__option123__menu-list {
+  padding-bottom: 0;
+}
+
+.react-select__option123__menu .react-select__option123__menu-list .react-select__option123__option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  padding: 15px 20px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.react-select__option123__menu .react-select__option123__menu-list .react-select__option123__option:active {
+  background: transparent;
+}
+
+.react-select__option123__menu .react-select__option123__menu-list .react-select__option123__option > div {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin-right: 20px;
+}
+/*# sourceMappingURL=select-menu.css.map */

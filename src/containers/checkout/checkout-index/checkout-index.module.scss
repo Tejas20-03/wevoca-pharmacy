@@ -1,0 +1,239 @@
+@import "@/styles/mixins";
+.cartPageCOntainer {
+    margin-bottom: 130px;
+}
+.cartBreadCrumb {
+    margin-bottom: 0 !important;
+    @include responsive-sm() {
+        margin-bottom: 20px !important;
+    }
+}
+.CartGridContainer {
+    @include flex(space-between, flex-start, row, wrap);
+    .cartLeft {
+        flex: 0 0 calc(70% - 40px);
+        max-width: calc(70% - 40px);
+        margin-right: 40px;
+        @include responsive-xl() {
+            flex: 0 0 calc(65% - 20px);
+            max-width: calc(65% - 20px);
+            margin-right: 20px;
+        }
+        @include responsive-lg() {
+            flex: 0 0 calc(60% - 20px);
+            max-width: calc(60% - 20px);
+            margin-right: 20px;
+        }
+        @include responsive-md() {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-right: 0;
+        }
+        > div {
+            margin: 0 0 10px;
+        }
+        > button {
+            margin: 0 0 20px;
+        }
+        .paymentCard {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: fadeInWithScroll 500ms ease-in-out;
+            &.fadeOut {
+                animation: fadeOutWithScroll 500ms ease-in-out;
+            }
+            @include responsive-sm {
+                flex-direction: column;
+                margin-top: 10px;
+                margin-bottom: 15px;
+                gap: 10px;
+            }
+            img {
+                width: 150px;
+                @include responsive-md {
+                    width: 80px;
+                }
+            }
+            p {
+                color: var(--primary-color);
+                @include responsive-sm {
+                    font-size: 0.8rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .cartRight {
+        flex: 0 0 30%;
+        max-width: 30%;
+        @include responsive-xl() {
+            flex: 0 0 35%;
+            max-width: 35%;
+        }
+        @include responsive-lg() {
+            flex: 0 0 40%;
+            max-width: 40%;
+        }
+        @include responsive-md() {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+    .checkoutBtn {
+        text-align: center;
+        margin: 20px 0 0;
+        width: 100%;
+        button {
+            width: 100%;
+            padding: 15px 10px;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+        }
+        .OnlinePaymentBtn {
+            width: initial;
+            padding: 15px 20px;
+        }
+    }
+    .promoBox {
+        margin: 20px 0 0;
+        p {
+            font-size: 0.7rem;
+            padding: 0 10px;
+            margin-bottom: 7px;
+            color: var(--primary-color);
+        }
+    }
+    .prescription {
+        margin: 40px 0 10px;
+        color: var(--error-color);
+        button {
+            color: inherit;
+            text-decoration: underline;
+            border-bottom: 1px solid var(--error-color);
+            @include ButtonReset();
+            position: relative;
+        }
+        input {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .orderBtn {
+        font-weight: 400;
+        margin: 10px 0 20px;
+        background: transparent;
+        padding: 0;
+        color: var(--primary-color);
+        cursor: inherit;
+        font-size: 0.8rem;
+    }
+}
+
+.noCart {
+    margin: 30px 0 30px 0;
+    @include responsive-sm() {
+        margin: 30px 0 30px 10px;
+    }
+}
+
+.AddressBox {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: 20px 0;
+    &:focus {
+        outline: none;
+    }
+    > div {
+        // border: 1px solid var(--shadow-color);
+        // border-radius: 10px;
+        padding: 15px 0;
+    }
+    button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+    }
+}
+
+.BannerContainer {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.paymentCardDetails {
+    @include flex(flex-start, flex-start, column)
+}
+
+.voucherValue {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 !important;
+    p {
+      color: var(--primary-color);
+      font-weight: 700 !important;
+      font-size: 1.2rem;
+    }
+  }
+  
+@keyframes fadeInWithScroll {
+    0%{
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        max-height: 200px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes fadeOutWithScroll {
+    0% {
+        max-height: 200px;
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+
+.successText {
+    color: var(--primary-color);
+    font-weight: 700;
+    // text-decoration: underline;
+    margin: -5px 0 10px;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+.backButton {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    svg {
+        width: 17px;
+        height: 17px;
+    }
+    .voucherHeading {
+        margin-left: 15px;
+        line-height: 1;
+        margin-bottom: 0 !important;
+    }
+}

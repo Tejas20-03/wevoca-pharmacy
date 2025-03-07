@@ -1,0 +1,115 @@
+@import '@/styles/mixins';
+
+header {
+  .search {
+    width: 280px;
+    font-weight: 400;
+    position: relative;
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    @include responsive-xl() {
+      flex: 1;
+      width: initial;
+    }
+    @include responsive-sm() {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin: 10px 0 0;
+    }
+  }
+}
+
+.searchIconWrapper {
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+.voiceIcon {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: inherit !important;
+  padding-right: 6px !important;
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.searchResultBox {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  ul {
+    @include list-style();
+    background: var(--bg-color);
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid var(--border-color);
+    border-top: 0;
+    max-height: 200px;
+    overflow: auto;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -14px;
+      left: 0;
+      width: 1px;
+      height: 30px;
+      background: var(--border-color);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: -14px;
+      right: 0;
+      width: 1px;
+      height: 30px;
+      background: var(--border-color);
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    li {
+      &:last-child {
+        a {
+          border-bottom: 0;
+        }
+      }
+      a {
+        text-decoration: none;
+        padding: 10px;
+        color: var(--text-color);
+        display: inline-block;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-bottom: 1px solid var(--text-color-lightgrey);
+        font-size: 0.9rem;
+      }
+    }
+  }
+  .viewAll {
+    text-align: center;
+    border: 1px solid var(--border-color);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-top: 0;
+    background: var(--text-color-alt);
+    padding: 26px 16px 22px;
+    margin-top: -10px;
+    z-index: -2;
+    position: relative;
+    button {
+      @include ButtonReset();
+      box-shadow: 0 1px 0 var(--text-color);
+      color: var(--text-color);
+      font-size: 0.8rem;
+    }
+  }
+}
+.searchBoxClosed {
+  display: none;
+}

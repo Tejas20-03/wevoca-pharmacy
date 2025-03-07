@@ -1,0 +1,41 @@
+@import "@/styles/mixins";
+
+.QuantityBox {
+  @include flex(flex-start, center);
+  p {
+    padding: 0 8px;
+    margin-bottom: 0;
+  }
+  button {
+    border: 1px solid #dadada;
+    background: none;
+    border-radius: 4px;
+    width: 29px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include responsive-lg() {
+      width: 30px;
+      height: 27px;
+    }
+
+    &:last-child {
+      background: #0081761a;
+      border: none;
+    }
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  &.checkoutQty {
+    p {
+      color: grey;
+      span {
+        color: var(--text-color);
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

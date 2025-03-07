@@ -1,0 +1,10 @@
+@import "@/styles/mixins";
+
+.storeCardContainer {
+    @include flex(flex-start, flex-start, row, wrap);
+    @include list-style();
+
+    @include responsive-sm() {
+        @include flex(center, center, row, wrap);
+    }
+}

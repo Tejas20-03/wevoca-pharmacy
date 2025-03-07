@@ -1,0 +1,84 @@
+.titleContainer {
+  margin-top: 30px;
+  padding: 0 0 20px;
+  transition: 500ms ease-in-out;
+  .content {
+    a {
+      color: var(--secondary-color);
+    }
+  }
+  .content,
+  .contentShowFull {
+    height: 150px;
+    overflow: hidden;
+    .aboutHeading {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    p {
+      padding: 0 0 15px;
+      font-size: 0.8rem;
+    }
+    h2 {
+      font-weight: 600;
+      color: var(--text-color);
+      line-height: 1.2;
+      font-size: 1.1rem;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 10px 0 0;
+      li {
+        padding: 5px 0;
+        font-size: 0.8rem;
+        strong {
+          color: var(--text-color);
+        }
+      }
+    }
+  }
+  .contentShowFull {
+    height: 100%;
+  }
+  .SeeMoreBtn,
+  .SeeMoreBtnOpened {
+    width: 100%;
+    padding: 50px 0 20px;
+    text-align: center;
+    background: linear-gradient(
+      360deg,
+      var(--primary-color) 50%,
+      transparent
+    );
+    margin-top: -50px;
+    position: relative;
+    z-index: 3;
+    button {
+      border: 2px solid var(--border-color);
+      background: transparent;
+      color: var(--text-color);
+      font-weight: 400;
+      border-color: var(--secondary-color);
+      padding: 12px 26px 14px;
+      margin: 0 5px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 200ms ease-in-out;
+      font-size: 0.8rem;
+    }
+  }
+  .SeeMoreBtnOpened {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    background: transparent;
+    margin-top: 0;
+    position: relative;
+    z-index: 3;
+  }
+}

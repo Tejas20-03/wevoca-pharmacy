@@ -1,0 +1,81 @@
+@import "@/styles/mixins";
+
+.SwiperSlideImg {
+    width: 100%;
+    @include responsive-md() {
+        // height: 200px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    @include responsive-sm() {
+        // height: 180px;
+        object-position: center;
+    }
+    img {
+        border-radius: 0.5rem;
+    }
+}
+
+.bannerOverlay {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2rem;
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: capitalize;
+        color: var(--text-color);
+        line-height: 1.1;
+        @include responsive-lg() {
+            font-size: 2rem;
+        }
+        @include responsive-md() {
+            font-size: 1.7rem;
+        }
+        span {
+            display: block;
+        }
+    }
+    button {
+        margin-top: 15px;
+        @include responsive-lg() {
+            padding: 11px 13px;
+            font-size: 0.7rem;
+        }
+    }
+}
+
+// pages with banner has a differen spacing
+.baseLayoutSetting {
+    // padding-top: 0 !important;
+    .productContainer {
+        padding-top: 0;
+        // @include padding-horizontal(0px);
+    }
+}
+
+.BannerContainer {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.activeBullet {
+    background-color: var(--primary-color) !important;
+    opacity: 1 !important;
+    margin: 0 0.75rem !important;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: 0.5px solid var(--error-color);
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}

@@ -1,0 +1,39 @@
+@import "@/styles/mixins";
+
+.boxContainer {
+    border: 1px solid var(--shadow-color);
+    border-radius: 12px;
+    padding: 20px 40px;
+    position: relative;
+    margin-top: 30px;
+    @include responsive-xl() {
+        padding: 15px 20px;
+    }
+    // @include responsive-sm() {
+    //     border: none;
+    // }
+    .closeBtn {
+        @include ButtonReset();
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        right: -4px;
+    }
+    .boxTitle {
+        color: var(--text-color);
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    > a,
+    > button {
+        padding: 8px 25px;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+}

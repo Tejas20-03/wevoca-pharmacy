@@ -1,0 +1,60 @@
+@import "@/styles/mixins";
+
+.socialIcon {
+    position: absolute;
+    right: 40px;
+    z-index: 123;
+    flex-direction: column;
+    top: 50%;
+    transform: translateY(-50%);
+    @include responsive-xl() {
+        top: 45%;
+    }
+    @include responsive-lg() {
+        display: none;
+    }
+    li {
+        &:first-child {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                top: -65px;
+                left: 49%;
+                transform: translateX(-50%);
+                width: 1px;
+                height: 50px;
+                background: var(--fill-color);
+                opacity: 40%;
+                @include responsive-xl() {
+                    top: -55px;
+                    height: 40px;
+                }
+            }
+        }
+        &:last-child {
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -65px;
+                left: 49%;
+                transform: translateX(-50%);
+                width: 1px;
+                height: 50px;
+                background: var(--fill-color);
+                opacity: 40%;
+                @include responsive-xl() {
+                    bottom: -55px;
+                    height: 40px;
+                }
+            }
+        }
+        a {
+            padding: 10px;
+            display: inline-block;
+            @include responsive-xl() {
+                padding: 8px 10px;
+            }
+        }
+    }
+}

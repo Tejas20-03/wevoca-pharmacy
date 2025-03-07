@@ -1,0 +1,35 @@
+import React from "react";
+
+const PaymentMethodIcon: React.FC = () => {
+  return (
+    <svg
+      width="95"
+      height="51"
+      viewBox="0 0 95 51"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <mask id="path-1-inside-1_7685_121029" fill="white">
+        <rect width="78" height="51" rx="1" />
+      </mask>
+      <rect
+        width="78"
+        height="51"
+        rx="1"
+        stroke="#008176"
+        stroke-width="4"
+        mask="url(#path-1-inside-1_7685_121029)"
+      />
+      <line y1="13" x2="77" y2="13" stroke="#008176" stroke-width="2" />
+      <circle cx="6" cy="7" r="2" fill="#008176" />
+      <circle cx="13" cy="7" r="2" fill="#008176" />
+      <circle cx="19" cy="7" r="2" fill="#008176" />
+      <rect x="76" y="23" width="2" height="9" fill="white" />
+      <path
+        d="M94.0607 28.0607C94.6464 27.4749 94.6464 26.5251 94.0607 25.9393L84.5147 16.3934C83.9289 15.8076 82.9792 15.8076 82.3934 16.3934C81.8076 16.9792 81.8076 17.9289 82.3934 18.5147L90.8787 27L82.3934 35.4853C81.8076 36.0711 81.8076 37.0208 82.3934 37.6066C82.9792 38.1924 83.9289 38.1924 84.5147 37.6066L94.0607 28.0607ZM61 28.5H93V25.5H61V28.5Z"
+        fill="#008176"
+      />
+    </svg>
+  );
+};
+export default PaymentMethodIcon;

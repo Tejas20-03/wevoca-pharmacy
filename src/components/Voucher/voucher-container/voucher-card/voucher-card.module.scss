@@ -1,0 +1,153 @@
+@import '@/styles/mixins';
+.imageContainer {
+  flex: 0 0 calc(50% - 14px);
+  max-width: calc(50% - 14px);
+  width: 100%;
+  margin: 0 7px 10px;
+  position: relative;
+  @include responsive-sm() {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 0 0 10px;
+  }
+  > button,
+  > div {
+    @include flex(flex-start, flex-start, row, nowrap);
+    height: 100%;
+    padding: 20px 17px;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 12px;
+    position: relative;
+    width: 100%;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -25px;
+      width: 35px;
+      height: 35px;
+      background: var(--text-color-alt);
+      border-radius: 50%;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -25px;
+      width: 35px;
+      height: 35px;
+      background: var(--text-color-alt);
+      border-radius: 50%;
+    }
+    .box,
+    .box2 {
+      flex: 0 0 50%;
+      max-width: 50%;
+      @include flex(center, center, column);
+      h2 {
+        @include flex(center, center, row, nowrap);
+        color: var(--text-color-alt);
+
+        font-size: 0.9rem;
+        font-weight: 600;
+        svg {
+          margin-right: 10px;
+          width: 20px;
+          height: 20px;
+        }
+      }
+      p {
+        font-size: 0.7rem;
+        padding-left: 0;
+        color: var(--text-color-alt);
+      }
+    }
+    .box2 {
+      h2 {
+        font-size: 0.7rem;
+        font-weight: 400;
+      }
+      p {
+        font-weight: 600;
+        overflow-wrap: anywhere;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.imageContainer2 {
+  padding: 0 10px 10px;
+  > div {
+    background-color: transparent !important;
+    border: 1px solid #e8ecf2;
+    padding: 15px !important;
+    &::before {
+      content: '';
+      display: none;
+    }
+    &::after {
+      content: '';
+      display: none;
+    }
+    .box,
+    .box2 {
+      flex: 0 0 50%;
+      max-width: 50%;
+      @include flex(center, center, column);
+      gap: 20px;
+      h2 {
+        @include flex(center, center, row, nowrap);
+        color: var(--text-color);
+
+        font-size: 1rem;
+        font-weight: 600;
+        svg {
+          margin-right: 10px;
+          width: 20px;
+          height: 20px;
+        }
+      }
+      p {
+        font-size: 1rem;
+        padding-left: 0;
+        color: var(--text-color);
+      }
+      button {
+        text-transform: uppercase;
+        font-weight: 500;
+        padding: 10px 20px;
+      }
+    }
+    .box {
+      gap: 28px;
+      > p {
+        &:first-child {
+          word-wrap: break-word;
+          width: 100%;
+          line-height: 1.2;
+          text-align: center;
+        }
+      }
+      .date {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .voucherCode,
+  .voucherAmount {
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+  }
+}
+
+.voucherBox {
+  .loadingBtn {
+    background: var(--bg-color-darker);
+    cursor: not-allowed;
+  }
+}

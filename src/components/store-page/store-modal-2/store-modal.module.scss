@@ -1,0 +1,122 @@
+@import "@/styles/mixins";
+
+.storeModalContainer {
+    .MuiBox-root {
+        width: 700px;
+    }
+    .popupLoader {
+        width: 100%;
+    }
+    .storeModalContent {
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 70px;
+        padding-bottom: 50px;
+        @include flex(flex-start, center, row);
+        @include responsive-sm() {
+            @include flex(center, center, column);
+            padding-top: 66px;
+            padding-bottom: 32px;
+        }
+
+        .storeModalImgWrapper {
+            flex: 0 0 40%;
+            max-width: 40%;
+            @include responsive-sm() {
+
+                flex: initial;
+                max-width: 100%;
+                position: relative;
+                width: 280px !important;
+                height: 300px !important;
+                display: block;
+            }
+            @include responsive-2xs() {
+                height: initial !important;
+                aspect-ratio: 4/4;
+            }
+            img {
+                width: 100%;
+                height: 304px;
+                object-fit: cover;
+                border-radius: 12px;
+                @include responsive-md() {
+                    height: 250px;
+                }
+                &.popupImage {
+                    object-fit: contain;
+                    padding: 40px;
+                    border: 1px solid var(--shadow-color);
+                }
+            }
+        }
+        .storeModalContentWrapper {
+            flex: 0 0 60%;
+            max-width: 60%;
+            padding-left: 40px;
+            @include responsive-md() {
+                padding-left: 30px;
+            }
+            @include responsive-sm() {
+                flex: 0 0 100%;
+                max-width: 100%;
+                text-align: center;
+                padding-left: 0;
+                margin-top: 20px;
+            }
+            .title {
+                font-size: 1.4rem;
+                color: var(--text-color);
+                font-weight: 600;
+                margin-bottom: 10px;
+                @include responsive-sm() {
+                    margin-bottom: 20px;
+                }
+            }
+            > a {
+                border-radius: 9px;
+                text-transform: uppercase;
+                font-size: 0.7rem;
+                @include padding-horizontal(20px);
+                text-decoration: none;
+            }
+            .contact {
+                @include flex(flex-start, center, row);
+                padding: 28px 0;
+                @include responsive-sm() {
+                    @include flex(center, center);
+                }
+                img {
+                    margin-right: 20px;
+                }
+                a {
+                    text-decoration: none;
+                    color: var(--primary-color);
+                    font-weight: 600;
+                }
+            }
+            .storeTiming {
+                .storeTitle {
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                    @include responsive-md() {
+                        margin-bottom: 8px;
+                    }
+                }
+                .timing {
+                    font-weight: 600;
+                    color: var(--text-color-grey);
+                    font-size: 1.6rem;
+                    line-height: 1.3;
+                    @include responsive-md() {
+                        font-size: 1.3rem;
+                    }
+                    span {
+                        display: block;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+}

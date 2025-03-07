@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,UADM,CACN,CAAC,CAAC;EACE,aAAa,EAAE,IAAI;EACnB,SAAS,EAAE,OAAO;CACrB;;AAJL,AAKI,UALM,CAKN,EAAE,CAAC;EACC,UAAU,EAAE,IAAI;EAChB,aAAa,EAAE,IAAI;CACtB",
+    "sources": [
+        "privacy-policy-index.module.scss"
+    ],
+    "names": [],
+    "file": "privacy-policy-index.module.css"
+}

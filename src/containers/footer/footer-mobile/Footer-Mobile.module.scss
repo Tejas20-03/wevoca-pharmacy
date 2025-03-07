@@ -1,0 +1,105 @@
+@import "@/styles/mixins";
+
+// responsive footer bar styling
+.footerBar {
+    position: relative;
+    .chat {
+        bottom: 98px;
+    }
+    .talkToPharmacist {
+        all: unset;
+        cursor: pointer;
+        position: fixed;
+        z-index: 100;
+        bottom: 98px;
+        right: 10px;
+    }
+    header {
+        background-color: var(--text-color-alt);
+    }
+    .footerToolbar {
+        padding: 0;
+        line-height: 1;
+        min-height: auto;
+        justify-content: center;
+        text-align: center;
+        a {
+            flex: 0 0 20%;
+            max-width: 20%;
+            display: inline-block;
+        }
+        .active {
+            border-top: 2px solid var(--primary-color);
+        }
+        p {
+            font-size: 0.55rem;
+            color: var(--bg-color-darker);
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+        .paraActive {
+            color: var(--primary-color);
+        }
+        .footerCart {
+            background: var(--primary-color);
+            padding: 12px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            position: relative;
+            transform: translateY(-3px);
+            width: 50px;
+            margin: auto;
+            span {
+                color: var(--primary-color);
+                background-color: var(--text-color-alt);
+                line-height: 1;
+                font-size: 0.6rem;
+                border-radius: 50%;
+                position: absolute;
+                border: 2px solid var(--primary-color);
+                width: 19px;
+                height: 19px;
+                top: 5px;
+                right: 8px;
+                margin: 0;
+                padding: 0;
+                font-weight: 700;
+            }
+        }
+        .footerQuantity {
+            background: var(--error-color);
+            .cartQnt {
+                border: 2px solid var(--error-color);
+                color: var(--error-color);
+            }
+        }
+        button {
+            padding: 25px 0;
+            display: inline-block;
+            border-radius: 0;
+            &:hover {
+                background-color: transparent;
+            }
+            &:active {
+                background-color: transparent;
+            }
+            &:focus {
+                background-color: transparent;
+            }
+        }
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+.gridBox {
+    text-align: center;
+    p {
+        font-weight: 600;
+    }
+}

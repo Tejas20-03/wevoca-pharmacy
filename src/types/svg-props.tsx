@@ -1,0 +1,1 @@
+export default interface ISvgProps { size?: number; color?: string; color2?: string; bgColor?: string; opacity?: number }

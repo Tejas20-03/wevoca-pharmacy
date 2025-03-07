@@ -1,0 +1,193 @@
+@import '@/styles/mixins';
+
+.ReviewWrapper {
+  margin-bottom: 120px;
+  .reviewTitle {
+    color: var(--primary-color);
+    font-weight: 700 !important;
+    font-size: 1.4rem !important;
+  }
+  .reviewStarButtons {
+    list-style: none;
+    @include flex(flex-start, center, row, wrap);
+    button {
+      background-color: transparent;
+      color: var(--text-color);
+      @include flex(flex-start, center, row, wrap);
+      border: 1px solid var(--border-color);
+      border-bottom-width: 4px;
+      margin-right: 20px;
+      padding-left: 22px;
+      padding-right: 22px;
+      &.activeButton {
+        background-color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+        p {
+          color: var(--text-color-alt);
+        }
+        svg {
+          path {
+            fill: var(--text-color-alt);
+          }
+        }
+      }
+      p {
+        margin-left: 10px;
+        font-weight: 600;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @include responsive-sm() {
+      flex-wrap: nowrap;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      li {
+        margin-right: 20px;
+        button {
+          margin: 0;
+          padding: 7px 17px;
+          display: flex;
+          flex-wrap: nowrap;
+        }
+      }
+    }
+  }
+  .reviewBoard {
+    @include flex(flex-start, center);
+    margin-bottom: 30px;
+    .AverageReview {
+      .averageNum {
+        @include flex(flex-start, center);
+        h3 {
+          font-weight: 700;
+        }
+        p {
+          margin-left: 20px;
+          background-color: var(--primary-color);
+          color: white;
+          border-radius: 7px;
+          font-size: 0.8rem;
+          padding: 5px 15px;
+          font-weight: 600;
+        }
+      }
+    }
+    .reviewList {
+      flex: 1;
+      ul {
+        list-style: none;
+        border-left: 1px solid var(--border-color);
+        margin-left: 40px;
+        padding-left: 40px;
+        li {
+          display: flex;
+          align-items: center;
+          .ratingInReview {
+            margin-top: 0;
+          }
+        }
+      }
+      @include responsive-sm() {
+        width: 100%;
+      }
+    }
+
+    @include responsive-sm() {
+      @include flex(flex-start, flex-start, row, wrap);
+      .AverageReview {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 0 20px;
+        h3 {
+          font-size: 2.5rem;
+        }
+      }
+      .reviewList {
+        ul {
+          padding: 0;
+          margin: 0;
+          border: none;
+        }
+      }
+    }
+    @include responsive-xs() {
+      .AverageReview {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .reviewsDetails {
+    margin: 40px 0;
+    > div {
+      padding: 20px 0;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      .reviewDetailHeader {
+        @include flex(space-between, flex-start, row, wrap);
+        @include responsive-xs() {
+          @include flex(flex-start, flex-start, column, wrap);
+        }
+        span {
+          margin-top: 0;
+        }
+        h4 {
+          font-weight: 600;
+          font-size: 1.15rem;
+          word-break: break-all;
+        }
+        p {
+          font-size: 0.85rem;
+          margin-top: 10px;
+          color: var(--text-color-grey);
+        }
+        .ratingInReview {
+          svg {
+            width: 1.6rem;
+            height: 1.6rem;
+          }
+        }
+      }
+    }
+    .reviewDetailDesc {
+      margin-top: 20px;
+      p {
+        font-size: 0.9rem;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}
+
+.ratingInReview {
+  color: var(--primary-color) !important;
+  margin-top: 10px;
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+  @include responsive-sm() {
+    margin-top: 0;
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+}
+
+.ratingSlider {
+  width: 250px;
+  max-width: 100%;
+  margin-right: 20px;
+  margin-left: 10px;
+}

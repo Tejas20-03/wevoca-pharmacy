@@ -1,0 +1,39 @@
+.serverErrorPg {
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  text-align: center;
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.serverErrorPg .heading {
+  font-size: 15rem !important;
+  font-weight: 500 !important;
+  line-height: 1;
+  margin-bottom: 0 !important;
+  opacity: 0.05;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -2;
+}
+
+.serverErrorPg p {
+  margin: 20px 0;
+  font-size: 1.5rem;
+}
+
+.serverErrorPg p span {
+  font-weight: 600;
+  display: block;
+}
+
+.serverErrorPg button {
+  padding: 15px 30px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=error-pg.module.css.map */

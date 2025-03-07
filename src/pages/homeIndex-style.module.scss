@@ -1,0 +1,14 @@
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.container {
+    width: 100%;
+
+    @include responsive-sm() {
+        margin-bottom: 6rem;
+    }
+}
+
+.categoryMenu {
+    display: none;
+}

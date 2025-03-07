@@ -1,0 +1,41 @@
+@import "@/styles/mixins";
+
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  bottom: 20px !important;
+  @include responsive-sm() {
+    bottom: 10px !important;
+  }
+  .swiper-pagination-bullet {
+    background-color: var(--bg-color);
+    opacity: 0.5;
+  }
+}
+.swiper {
+  .swiper-button-prev {
+    display: none;
+  }
+  .swiper-button-next {
+    display: none;
+  }
+}
+
+
+
+.swiper-container {
+  overflow: visible;
+}
+
+.home-banners_swiperContainer__McIT3 {
+  .slick-slider {
+    .slick-list{
+      overflow: initial !important;
+        // .slick-slide {
+        //   margin: 0 10px;
+        // }
+    }
+  }
+}

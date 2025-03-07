@@ -1,0 +1,20 @@
+@import "@/styles/mixins";
+
+.complaintForm {
+    @include responsive-sm() {
+        @include flex(center, center, row, wrap);
+    }
+    > div:last-child {
+        @include responsive-sm() {
+            text-align: center;
+        }
+    }
+    .formGroup {
+        flex: 0 0 calc(66.6% - 25px);
+        max-width: calc(66.6% - 25px);
+        @include responsive-lg() {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+}

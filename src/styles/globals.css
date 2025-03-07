@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif !important;
+}
+
+body {
+  background: var(--primary-color);
+  overflow-x: hidden;
+}
+
+::-moz-selection {
+  color: var(--text-color-alt);
+  background: var(--primary-color);
+}
+
+::selection {
+  color: var(--text-color-alt);
+  background: var(--primary-color);
+}
+
+[dir="rtl"] .banner-container {
+  direction: ltr; /* Keep the banner direction left-to-right */
+}
+
+[dir="rtl"] .banner-content {
+  direction: rtl; /* Set the content inside the banner back to right-to-left */
+  text-align: right;
+}
+
+[dir="rtl"] .swiper-wrapper {
+  direction: ltr;
+}
+
+[dir="rtl"] .swiper-slide {
+  direction: rtl;
+}
+
+[dir="rtl"] .swiper-button-next {
+  left: 10px;
+  right: auto;
+}
+
+[dir="rtl"] .swiper-button-prev {
+  right: 10px;
+  left: auto;
+}
+
+[dir="rtl"] .swiper-button-next:after {
+  content: "prev";
+}
+
+[dir="rtl"] .swiper-button-prev:after {
+  content: "next";
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btnGroup button {
+  margin: 0 10px;
+}
+
+.btnGroup button:first-child {
+  margin-left: 0;
+}
+
+.btnGroup button:last-child {
+  margin-right: 0;
+}
+
+.btnSubmit {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  padding: 15px 10px;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.btn.LinkBtn {
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.btn-half-rounded {
+  border-radius: 10px;
+  padding: 9px 17px;
+}
+
+.btn-rounded {
+  border-radius: 50px;
+  padding: 9px 17px;
+}
+
+.btn.primary {
+  background: var(--primary-color);
+  color: white;
+}
+.btn.secondary {
+  background: var(--secondary-color);
+  color: white;
+}
+
+.swiper-button-disabled > svg > ellipse {
+  fill: var(--bg-color-darker) !important;
+}
+
+.swiper-button-disabled > svg > g > path {
+  fill: var(--text-color-alt) !important;
+}
+.Toastify__toast-theme--dark {
+  background: var(--bg-color-darkgreen) !important;
+  border-radius: 50px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: center !important;
+  height: initial !important;
+  display: block !important;
+  max-height: initial !important;
+  min-height: initial !important;
+  padding: 10px 20px !important;
+  font-size: 0.8rem !important;
+}
+
+.Toastify__toast-body {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.Toastify__close-button {
+  display: none !important;
+}
+
+.Toastify__toast-container {
+  width: initial !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  bottom: 1rem !important;
+}
+
+.Toastify__toast-body > div {
+  font-size: 0.7rem;
+}
+
+.sticky + main {
+  padding-top: 136px;
+}
+
+.submenu:not(.has-sub-submenu) {
+  overflow: auto;
+  height: 100%;
+}
+
+.submenu.has-sub-submenu.nutritions-supplements .submenu {
+  height: 350px;
+  min-height: 50%;
+}
+
+.pulseBox {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  top: 0;
+  left: 0;
+  z-index: 1200;
+}
+.pulseBox .pulseWrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.pulseBox .object {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0 100px;
+}
+
+.pulseBox .outline {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 8px solid #b5a4a4;
+  animation: pulse 3s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  position: absolute;
+}
+
+.pulseBox .button {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #50cddd;
+  box-shadow: 0px 0px 80px #0084f9;
+  position: absolute;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    border: 65px solid #0b3082;
+  }
+  50% {
+    border: solid #a3ffc2;
+    opacity: 0.8;
+  }
+
+  90% {
+    transform: scale(3.2);
+    opacity: 0.2;
+    border: 3px solid #2e3cff;
+  }
+  100% {
+    transform: scale(3.3);
+    opacity: 0;
+    border: 1px solid #7a89ff;
+  }
+}
+
+.pulseBox #delayed {
+  animation-delay: 1.5s;
+}
+
+.pulseBox #circlein {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #6bd6e1;
+  box-shadow: 0px -2px 15px #e0ff94;
+  position: absolute;
+}
+
+.voice-search-input {
+  position: relative;
+  width: 100%;
+  height: initial;
+  display: inline-block;
+  max-width: 850px;
+  font-size: 2rem;
+  border: none;
+  margin-left: 4rem;
+}
+.voice-search-input input {
+  padding: 1rem 2rem;
+  font-size: 1.5rem !important;
+  width: calc(100% - 4rem);
+  display: inline-block;
+  color: white;
+  opacity: 1;
+  text-transform: capitalize;
+}
+
+@media only screen and (max-width: 768px) {
+  .voice-search-input {
+    margin-left: 0;
+    display: none !important;
+  }
+  .pulseBox .object {
+    margin: 0;
+  }
+  .pulseBox .pulseWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    height: 90%;
+    justify-content: space-around;
+    top: initial;
+    transform: translateY(0);
+    bottom: 0;
+    position: absolute;
+  }
+}

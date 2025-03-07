@@ -1,0 +1,153 @@
+@import "@/styles/mixins";
+
+.groupRadioCardWrapper {
+    position: relative;
+    .cardsWrapper {
+        position: absolute;
+        bottom: 15px;
+        right: 0;
+        @include responsive-md() {
+            bottom: 12px;
+        }
+        @include responsive-sm() {
+            bottom: 8px;
+        }
+    }
+    .cardsWrapper1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include responsive-md() {
+            top: 0;
+        }
+        @include responsive-sm() {
+            top: 0;
+        }
+    }
+    
+}
+.paymentBox {
+    @include responsive-md() {
+        margin-bottom: 20px;
+        border: none;
+        padding: 0 0;
+    }
+    > a {
+        @include responsive-md() {
+            display: none;
+        }
+    }
+    button {
+
+        top: 60%;
+        @include responsive-md() {
+            display: none;
+        }
+    }
+}
+.paymentRadio {
+    margin: 20px 0 0 !important;
+
+    @include flex(flex-start, flex-start, column);
+    @include responsive-lg() {
+        flex-direction: column;
+    }
+    @include responsive-sm() {
+        @include flex(flex-start, flex-start, column);
+    }
+    > div {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        justify-content: flex-start !important;
+    }
+    label {
+        @include responsive-lg() {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+.formGroup {
+    button {
+        display: none;
+
+        @include responsive-md() {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.7rem;
+            right: 10px;
+        }
+    }
+}
+
+
+.paymentCard {
+    display: none;
+    @include responsive-md {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        animation: fadeInWithScroll 500ms ease-in-out;
+        &.fadeOut {
+            animation: fadeOutWithScroll 500ms ease-in-out;
+        }
+        @include responsive-md {
+            flex-direction: column;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+        img {
+            width: 150px;
+            @include responsive-md {
+                width: 80px;
+            }
+        }
+        p {
+            color: var(--primary-color);
+            @include responsive-md {
+                font-size: 0.8rem;
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+@keyframes fadeInWithScroll {
+    0%{
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        max-height: 200px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes fadeOutWithScroll {
+    0% {
+        max-height: 200px;
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.cardSelection {
+    display: none;
+    @include responsive-md() {
+        display: block;
+    }
+}
+.cardSelectionDesignUpdate {
+    margin: 10px 0 25px;
+}

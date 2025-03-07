@@ -1,0 +1,13 @@
+@import "@/styles/mixins";
+
+.deliveryInstructions {
+    border: 1px solid var(--shadow-color);
+    padding: 18px 20px;
+    border-radius: 14px;
+    background: transparent;
+    width: 350px;
+    max-width: 95%;
+    margin-bottom: 14px;
+    outline: none;
+    width: 100%;
+}

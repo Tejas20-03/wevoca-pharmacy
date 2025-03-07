@@ -1,0 +1,15 @@
+@import "@/styles/mixins";
+
+.BrandCategoryName {
+    margin: 0 0 30px !important;
+    color: var(--primary-color) !important;
+    border-left: 2px solid var(--primary-color) !important;
+    line-height: 1 !important;
+    padding-left: 10px !important;
+    font-weight: 600 !important;
+    font-size: 1.2rem !important;
+
+    @include responsive-sm() {
+        margin: 20px 12px 30px !important;
+    }
+}

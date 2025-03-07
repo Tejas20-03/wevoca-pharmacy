@@ -1,0 +1,41 @@
+@import "@/styles/mixins";
+
+.orderTabs {
+    display: block !important;
+    height: auto !important;
+    div.tabWrapper {
+        max-width: 100% !important;
+        display: block;
+        overflow: auto !important;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        > div {
+            > div {
+                @include flex(flex-start, flex-start, row, wrap);
+                button {
+                    margin-bottom: 0 !important;
+                    margin-right: 15px;
+                    font-size: 0.9rem !important;
+                    padding: 10px 10px !important;
+                }
+            }
+        }
+    }
+    .orderTabPanel {
+        .orderTabs {
+            > div {
+                padding-left: 0;
+                padding-right: 0;
+                padding-bottom: 140px;
+                > div {
+                    &:not(:last-child) {
+                        > div {
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,86 @@
+@import '@/styles/mixins';
+.pageSpacing {
+  padding-bottom: 80px;
+  padding-left: 150px;
+  padding-right: 150px;
+  @include responsive-sm() {
+    padding-bottom: 120px;
+  }
+  .aboutPageBanner {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+  }
+  .pageTitle {
+    text-align: center;
+    font-weight: 600;
+    span {
+      display: block;
+      color: var(--primary-color);
+    }
+  }
+  .aboutGreenSec {
+    background-color: var(--primary-color);
+    padding: 40px;
+    margin: 40px 40px 0;
+    border-radius: 20px;
+    p {
+      font-size: 1.1rem;
+      color: var(--text-color-alt);
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .aboutWrapper {
+    img {
+      width: 100%;
+      height: auto;
+      z-index: 1;
+      position: relative;
+    }
+    img.aboutPerson {
+      margin-top: -50px;
+    }
+    img.map {
+      margin-top: 60px;
+    }
+    .pageTitle {
+      margin-top: 40px;
+    }
+    .sectionWrapper {
+      margin-top: 50px;
+      .pageTitle {
+        text-align: left;
+        font-weight: 600;
+        border-bottom: 5px solid #D0D5DD;
+        padding-bottom: 8px;
+        span {
+          display: inline-block;
+          color: var(--primary-color);
+        }
+      }
+      ul {
+        list-style: none;
+        li {
+          display: flex;
+          margin: 20px 0;
+          &:first-child {
+            margin-top: 30px;
+          }
+          h3 {
+            flex: 0 0 30%;
+            max-width: 30%;
+            font-size: 1.1rem;
+            font-weight: 600;
+          }
+          p {
+            flex: 0 0 70%;
+            max-width: 70%;
+            color: var(--text-color);
+          }
+        }
+      }
+    }
+  }
+}

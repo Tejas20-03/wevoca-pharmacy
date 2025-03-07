@@ -1,0 +1,129 @@
+@import "@/styles/mixins";
+@import "@/styles/variables";
+.title {
+  font-weight: 600;
+  @include responsive-sm() {
+    color: var(--text-color) !important;
+    margin-bottom: 1rem;
+  }
+}
+.container {
+  width: 100%;
+  background-color: var(--primary-color-darker);
+  // @include page-padding-horizontal();
+  @include padding-vertical(2rem);
+  // @include flex();
+  // flex-direction: column;
+  @include transition();
+
+  @include responsive-sm() {
+    background-color: transparent;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
+  @include responsive-xs() {
+    padding: 0.75rem 0;
+  }
+}
+
+.contentContainer {
+  max-width: 70%;
+  @include flex();
+  margin: auto;
+
+  @include responsive-md() {
+    max-width: 90%;
+  }
+  @include responsive-sm() {
+    flex-direction: column;
+    max-width: 100%;
+  }
+}
+
+.imgContainer {
+  height: 18rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  flex: 0 0 40%;
+  max-width: 40%;
+  @include responsive-md() {
+    width: 10rem;
+    height: 10rem;
+  }
+  @include responsive-sm() {
+    width: 115%;
+    border-radius: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+.content {
+  margin-left: 1rem;
+  text-align: center;
+  @include responsive-sm() {
+    margin: 0;
+  }
+
+  .contentTitle {
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--text-color-alt);
+    @include responsive-md() {
+      font-size: 1rem;
+    }
+    @include responsive-sm() {
+      color: var(--text-color);
+    }
+  }
+
+  .contentIcons {
+    @include flex();
+    margin-bottom: 1.5rem;
+
+    & .iconContainer {
+      flex: 0 0 25%;
+      max-width: 25%;
+      @include margin-horizontal(0.5rem);
+
+      & .icon {
+        color: var(--text-color-alt);
+        font-size: 2.5rem;
+        margin-bottom: 0.25rem;
+        @include responsive-md() {
+          font-size: 2rem;
+        }
+        @include responsive-sm() {
+          color: var(--text-color);
+        }
+      }
+
+      & .iconText {
+        text-align: center;
+        font-size: 1.2rem;
+        color: var(--text-color-alt);
+        @include responsive-md() {
+          font-size: 0.9rem;
+          color: var(--text-color);
+        }
+      }
+    }
+  }
+
+  .contentBtn {
+    background-color: var(--primary-color);
+    color: var(--text-color-alt);
+    padding: 0.85rem 0.9rem;
+    border-radius: 0.25rem;
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8rem;
+  }
+}

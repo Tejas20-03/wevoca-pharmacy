@@ -1,0 +1,286 @@
+@import "@/styles/mixins";
+
+.pageSpacing {
+  padding-bottom: 80px;
+  @include responsive-sm() {
+    padding-bottom: 120px;
+  }
+}
+.container {
+  width: 100%;
+  @include flex(center, flex-start);
+  margin-top: 70px;
+  margin-bottom: 70px;
+  @include responsive-md() {
+    @include flex(center, flex-start, column);
+    margin-top: 40px;
+  }
+  @include responsive-sm() {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.contentContainer {
+  width: 60%;
+  padding-left: 1rem;
+  @include responsive-lg() {
+    width: 65%;
+  }
+  @include responsive-md() {
+    width: 100%;
+    padding-left: 0;
+  }
+  & .productTitle {
+    color: var(--text-color);
+    line-height: 1;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding-bottom: 0.8rem;
+    @include responsive-sm() {
+      text-align: center;
+      line-height: 1.4;
+    }
+  }
+  & .perCaseAndQtyPriceContainer {
+    @include flex(center, center);
+    @include responsive-sm() {
+      @include flex(center, center, column, wrap);
+    }
+    & .priceQtyContainer {
+      flex: 1;
+      @include flex(flex-end);
+      & .priceContainer {
+        @include flex(center, center, coloumn);
+        margin-right: 10px;
+        & .price {
+          color: var(--text-color);
+          font-weight: 600;
+          font-size: 1rem;
+          padding-right: 0.7rem;
+        }
+        & .cutPrice {
+          color: var(--text-color-grey);
+
+          font-weight: 300;
+          font-size: 0.8rem;
+          text-decoration-line: line-through;
+        }
+      }
+    }
+  }
+  & .brandName {
+    margin: 0px 0 5px;
+    @include responsive-sm() {
+      margin: 0px 0 10px;
+    }
+    h2 {
+      font-size: 14px;
+      color: var(--text-color);
+      @include responsive-sm() {
+        text-align: center;
+      }
+    }
+    a {
+      text-transform: capitalize;
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--text-color);
+      box-shadow: 0 1px var(--text-color);
+    }
+  }
+  & .addToCardAndDeliveryContainer {
+    @include flex(space-between, self-end);
+    padding-top: 5%;
+    padding-bottom: 1%;
+
+    @include responsive-sm() {
+      padding-top: 5%;
+      @include flex(flex-start, center, column, wrap);
+    }
+
+    & .DeliveryContainer {
+      min-width: 30%;
+      position: relative;
+      > p {
+        position: absolute;
+        top: -26px;
+        color: var(--error-color);
+        font-weight: 500;
+        > button {
+          @include ButtonReset();
+          color: inherit;
+        }
+      }
+    }
+    & .addToCardContainer {
+      width: 40%;
+      height: 100%;
+      @include flex(flex-end, flex-end);
+      @include responsive-sm() {
+        @include flex(center, center);
+        margin-top: 20px;
+        width: 100%;
+      }
+      & .btn {
+        padding: 1rem 2.5rem;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      & .notifyMe {
+        background-color: var(--error-color);
+      }
+      & .greyOut {
+        background: var(--text-color-grey);
+        pointer-events: none;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.imageContainer {
+  width: 40%;
+  margin-top: 2rem;
+  @include flex(center, center);
+  padding-right: 1rem;
+  @include responsive-lg() {
+    width: 35%;
+  }
+  @include responsive-md() {
+    width: 100%;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+  }
+  @include responsive-sm() {
+    margin-top: 0;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  & .imgInnerContainer {
+    width: 300px;
+    max-width: 90%;
+    @include responsive-md() {
+      width: 250px;
+    }
+  }
+}
+
+.relativeSlider {
+  position: relative;
+  .btnGroup {
+    display: flex;
+    position: absolute;
+    top: -67px;
+    right: 0;
+    @include responsive-sm() {
+      top: -50px;
+      display: none;
+    }
+    > div:first-child {
+      margin-right: 15px;
+    }
+    div {
+      cursor: pointer;
+      svg {
+        @include responsive-sm() {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+  li {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.noProduct {
+  margin: 120px 0 120px;
+  h2 {
+    font-size: 1.5rem;
+  }
+  p {
+    color: var(--text-color-light-grey); // #ABABAB
+  }
+}
+
+.slide {
+  height: auto !important;
+  .productCard {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+  .emptyUl {
+    list-style: none;
+    display: inline-flex;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.ProductDetailTabs {
+  display: block;
+}
+.reactSelectBox {
+  > div > div {
+    width: 250px;
+  }
+}
+
+.variationRadioGroup {
+  @include flex(flex-start, flex-start);
+  flex-direction: column !important;
+  margin: 20px 0 !important;
+  @include responsive-sm() {
+    margin: 20px auto 0 !important;
+    width: 70%;
+    text-align: left;
+    max-width: 250px;
+  }
+  > div {
+    margin-right: 0;
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.singleVariant {
+  @include responsive-sm() {
+    @include flex(center, center);
+  }
+}
+.doubleVariant {
+  @include responsive-sm() {
+    margin-bottom: 1rem !important;
+  }
+}
+
+
+
+.ratingInReview {
+  color: var(--text-color) !important;
+  margin-top: 0;
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+.productReviewList {
+  margin-bottom: 10px;
+  @include flex(flex-start, center, row, wrap);
+  p {
+    margin-left: 10px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #2a579b;
+    cursor: pointer;
+  }
+  @include responsive-sm() {
+    @include flex(center, center, row, wrap);
+  }
+}

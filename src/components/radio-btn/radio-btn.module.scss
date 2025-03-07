@@ -1,0 +1,62 @@
+@import "@/styles/mixins";
+
+.RadioGroup {
+    @include flex(flex-start, flex-start, row, wrap);
+    margin-top: 60px;
+    margin-bottom: 60px;
+    @include responsive-sm() {
+        @include flex(center, center);
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+    .RadioBtn {
+        @include flex(center, center, row, wrap);
+        margin-right: 25px;
+        position: relative;
+        &.RadioBlured {
+            filter: grayscale(1);
+            > label {
+                color: var(--text-color-grey);
+                cursor: not-allowed;
+            }
+        }
+        input {
+            display: none;
+        }
+        input:checked {
+            + .customRadio::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 5px;
+                transform: translateY(-50%);
+                width: 8px;
+                height: 8px;
+                background: var(--secondary-color);
+                border-radius: 50%;
+            }
+        }
+        .customRadio {
+            pointer-events: none;
+        }
+        .customRadio::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            border: 2px solid var(--secondary-color);
+            border-radius: 50%;
+        }
+        label {
+            padding-left: 25px;
+            cursor: pointer;
+            @include responsive-sm() {
+                font-weight: 600;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

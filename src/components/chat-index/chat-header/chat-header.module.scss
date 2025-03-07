@@ -1,0 +1,35 @@
+
+
+.chatHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e1e1e1;
+  margin-bottom: 40px;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 2;
+  &.chatHistoryListHead {
+    margin-bottom: 10px;
+  }
+  button {
+    padding: 15px;
+  }
+  svg {
+    &:first-child {
+      width: 18px;
+      height: 18px;
+    }
+    &:last-child {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  p {
+    font-weight: 600;
+  }
+  &.chatHeadList {
+    margin-bottom: 10px;
+  }
+}

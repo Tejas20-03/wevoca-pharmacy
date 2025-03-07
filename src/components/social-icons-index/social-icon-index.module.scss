@@ -1,0 +1,13 @@
+@import "@/styles/mixins";
+
+.globalStyle {
+    @include flex();
+    @include list-style();
+    li {
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+        }
+    }
+}

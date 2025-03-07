@@ -1,0 +1,61 @@
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /var/run/nginx.pid;
+events {
+    worker_connections 1024;
+}
+http {
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+    keepalive_timeout 65;
+    types_hash_max_size 2048;
+    server {
+        # Redirect HTTP requests to HTTPS
+        listen 80;
+        server_name dvago.pk www.dvago.pk;
+        return 301 https://$host$request_uri;
+    }
+    proxy_cache my_cache;
+    proxy_cache_valid 200 1d;
+    proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=my_cache:10m max_size=500m;        
+    server {
+        listen 443 ssl;
+        server_name dvago.pk www.dvago.pk;
+        # SSL certificate and key paths
+        ssl_certificate /etc/nginx/ssl/dvago.crt;
+        ssl_certificate_key /etc/nginx/ssl/dvago.key;
+        # SSL settings
+        ssl_protocols TLSv1.2 TLSv1.3;
+        ssl_ciphers 'TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256';
+        ssl_prefer_server_ciphers off;
+        ssl_dhparam /etc/nginx/ssl/dhparam.pem;
+        ssl_session_timeout 1d;
+        ssl_session_cache shared:SSL:500m;
+        ssl_session_tickets off;
+        #ssl_stapling on;
+        #ssl_stapling_verify on;
+        #resolver 8.8.8.8;
+        add_header Strict-Transport-Security "max-age=31536000" always;
+        gzip on;
+        gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+        location / {
+            proxy_pass http://fe0:80;
+            #kisi aur din ki kahani hai yeh
+            #=========Start_Environment_Switch=========
+            #proxy_pass http://blue.dvago.pk;
+            #proxy_pass http://green.dvago.pk;
+            #==========End_Environment_Switch==========
+        }
+        # Error pages
+        error_page 400 401 402 403 404 500 501 502 503 504 /error.html;
+        location = /error.html {
+            root /var/www/html;
+        }
+    }
+    include /etc/nginx/conf.d/*.conf;
+}

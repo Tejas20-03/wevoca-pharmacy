@@ -1,0 +1,234 @@
+@import "@/styles/mixins";
+
+.addressModalContainer {
+    .addressModalContent {
+        @include flex(flex-start, flex-start, row, wrap);
+        flex-direction: column !important;
+        padding: 5rem 2rem 3rem;
+        @include responsive-md() {
+            padding: 4rem 2rem 3rem;
+        }
+        .gridBox,
+        .gridBox2 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            width: 60%;
+            margin: 0 auto;
+            @include responsive-md() {
+                width: 80%;
+            }
+            @include responsive-sm() {
+                width: 100%;
+            }
+
+            .addressesListWrapper {
+                background: black;
+            }
+        }
+        .gridBox2 {
+            text-align: center;
+            margin: 60px auto 0;
+            @include responsive-md() {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin: 30px auto 0;
+            }
+            > button {
+                width: 80%;
+                padding: 20px;
+                text-transform: uppercase;
+                @include responsive-md() {
+                    width: 50%;
+                }
+                @include responsive-md() {
+                    width: 250px;
+                    padding: 18px;
+                }
+            }
+        }
+    }
+    .AddAddressBox {
+        @include flex(flex-start, center, column);
+        width: 100%;
+        @include responsive-md() {
+            flex-wrap: wrap;
+        }
+        .gridBox,
+        .gridBox2 {
+            width: 80%;
+            flex: 0 0 80%;
+            max-width: 80%;
+            @include responsive-sm() {
+                width: 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.addressPopupSearch {
+    > div {
+        height: auto;
+        > div {
+            &:first-child {
+                right: 0;
+                left: initial;
+            }
+        }
+        input {
+            padding: 14px 25px !important;
+        }
+        svg {
+            width: 19px;
+            height: 19px;
+        }
+    }
+}
+
+.backBtn {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: transparent;
+    border: none;
+}
+.addressStartPopupContainer {
+    .addressModalContent {
+        @include responsive-sm() {
+            background: transparent;
+            padding: 0 !important;
+        }
+    }
+    .addressBoxWrapper {
+        width: 100%;
+        @include responsive-sm() {
+            background: white;
+            // padding: 1.4rem 1.6rem 1.7rem;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+    }
+    .addressesContainer {
+        @include responsive-sm() {
+            height: 250px;
+            overflow-x: hidden;
+            padding: 10px 0;
+            padding: 10px 1.6rem 10px;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+    @include responsive-sm() {
+        top: initial !important;
+        overflow: hidden;
+        bottom: 0;
+    }
+    .modelBoxClass {
+        @include responsive-sm() {
+            margin: 0 !important;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+    }
+    .modalHeadClass {
+        @include responsive-sm() {
+            display: none !important;
+        }
+    }
+    .addressModalContent {
+        @include flex(flex-start, flex-start, row, wrap);
+        flex-direction: column !important;
+        @include responsive-sm() {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border: none;
+        }
+        .gridBox,
+        .gridBox2 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            width: 60%;
+            margin: 0 auto;
+            @include responsive-sm() {
+                width: 100%;
+            }
+            .headingWrapper {
+                @include responsive-sm() {
+                    @include flex(flex-start, center, row);
+                    padding: 1.4rem 1.6rem 20px;
+                    margin-bottom: 0;
+                }
+                .heading {
+                    @include responsive-sm() {
+                        margin-bottom: 0 !important;
+                        margin-left: 10px !important;
+                        pointer-events: none;
+                        cursor: default;
+                    }
+                }
+                svg {
+                    @include responsive-sm() {
+                        width: 20px;
+                        height: 30px;
+                        pointer-events: none;
+                        cursor: default;
+                    }
+                }
+            }
+        }
+        .gridBox2 {
+            text-align: center;
+            margin: 60px auto 0;
+            @include responsive-sm() {
+                margin: 30px auto 30px;
+            }
+            > button {
+                width: 80%;
+                padding: 20px;
+                text-transform: uppercase;
+            }
+        }
+    }
+    .AddAddressBox {
+        @include flex(flex-start, center, column);
+        width: 100%;
+        .gridBox,
+        .gridBox2 {
+            @include responsive-sm() {
+                width: 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    }
+    .closeBtnOnModal {
+        display: none;
+    }
+    .addNewAddressBtnContainer {
+        text-align: left;
+        width: 60%;
+        margin: 10px auto 0;
+        @include flex(flex-start, center, row, wrap);
+        @include responsive-sm() {
+            width: 100%;
+            @include flex(flex-start, center, row, wrap);
+            padding: 0 1.6rem 10px;
+        }
+        .addNewAddressBtn {
+            color: var(--primary-color);
+            font-size: 15px;
+            text-transform: capitalize;
+            padding: 0;
+            border-bottom: 1px solid var(--primary-color);
+            padding: 0 0 2px 0;
+            border-radius: 0;
+        }
+        svg {
+            width: 25px;
+            height: 35px;
+            margin-right: 10px;
+        }
+    }
+}

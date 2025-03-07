@@ -1,0 +1,41 @@
+@import "@/styles/mixins";
+
+.LoginModalContent {
+    @include flex(center, center);
+    padding-top: 80px !important;
+
+    h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: var(--text-color);
+        @include responsive-sm() {
+            font-size: 1.8rem;
+        }
+    }
+    p {
+        span {
+            color: var(--primary-color);
+        }
+        button {
+            @include ButtonReset();
+            font-size: inherit;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+    }
+}
+
+.formGroup {
+    margin-bottom: 14px;
+    width: 100%;
+    input {
+        margin-bottom: 2px !important;
+    }
+    span {
+        font-size: 0.8rem;
+        padding: 0 3px;
+        color: var(--error-color);
+        font-weight: 400;
+        display: block;
+    }
+}
