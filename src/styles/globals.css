@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'Retrograde';
-  src: url('../fonts/Retrograde.ttf') format('truetype');
+  src: url('/fonts/Retrograde.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
