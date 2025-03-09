@@ -19,13 +19,13 @@
     }
     @include responsive-sm() {
       margin-left: 0;
-      color: var(--text-color) !important;
+      color: var(--bg-color) !important;
       padding-left: 0;
     }
   }
   .viewAllBtn {
     background-color: var(--secondary-color);
-    color: var(--text-color-alt);
+    color: var(--bg-color);
     text-decoration: none;
     text-transform: uppercase;
     padding: 8px 20px;

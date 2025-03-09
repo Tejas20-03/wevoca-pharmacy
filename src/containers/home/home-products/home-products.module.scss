@@ -7,6 +7,7 @@
   @include flex();
   flex-direction: column;
   @include transition();
+  
 
   @include responsive-sm() {
     padding-top: 0.7rem;
@@ -18,6 +19,8 @@
 }
 .mainContainer {
   position: relative;
+  padding-bottom: 2rem;
+  border-bottom: 8px solid var(--primary-color);
   @include responsive-sm() {
     padding-right: 0;
   }

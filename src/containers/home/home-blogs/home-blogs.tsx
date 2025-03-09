@@ -56,7 +56,7 @@ const HomeBlogs: React.FC = () => {
     <Container className={style.mainContainer}>
       <Box className={style.titleContainer}>
         <HomeSectionTitle
-          color="var(--text-color)"
+          color="var(--primary-color)"
           title={getText("Blogs")}
         />
         <Link className={`btn btn-primary ${style.viewAllBtn}`} href={`/blogs`}>
@@ -64,7 +64,7 @@ const HomeBlogs: React.FC = () => {
         </Link>
       </Box>
       <ul className={style.grid}>
-        {HomeBlogResponseData?.length > 0 ? (
+        {HomeBlogResponseData && HomeBlogResponseData?.length > 0 ? (
           HomeBlogResponseData.map((data, index) => (
             <BlogCardIndex
               className={style.grid_item}

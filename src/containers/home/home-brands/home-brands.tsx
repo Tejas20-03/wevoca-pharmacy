@@ -77,7 +77,7 @@ const HomeBrands: React.FC = () => {
       <Container className={style.mainContainer}>
         <Box className={style.titleContainer}>
           <HomeSectionTitle
-            color="var(--text-color)"
+            color="var(--primary-color)"
             title={
               language === "en"
                 ? homeBrand?.Description
