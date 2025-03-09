@@ -2,8 +2,9 @@
 .container {
   width: 100%;
   aspect-ratio: 1.16/1;
-  background-color: var(--bg-color); // #E9E9E9;
-  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  border-radius: 0px 30px 0px 30px !important;
+  border: 2px solid var(--primary-color);
   @include flex();
   overflow: hidden;
   position: relative;

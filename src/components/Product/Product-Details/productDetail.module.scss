@@ -32,7 +32,7 @@
     padding-left: 0;
   }
   & .productTitle {
-    color: var(--text-color);
+    color: var(--primary-color);
     line-height: 1;
     font-weight: 500;
     font-size: 1.2rem;
@@ -54,7 +54,7 @@
         @include flex(center, center, coloumn);
         margin-right: 10px;
         & .price {
-          color: var(--text-color);
+          color: var(--primary-color);
           font-weight: 600;
           font-size: 1rem;
           padding-right: 0.7rem;
@@ -76,7 +76,7 @@
     }
     h2 {
       font-size: 14px;
-      color: var(--text-color);
+      color: var(--primary-color);
       @include responsive-sm() {
         text-align: center;
       }
@@ -85,8 +85,8 @@
       text-transform: capitalize;
       text-decoration: none;
       font-weight: 600;
-      color: var(--text-color);
-      box-shadow: 0 1px var(--text-color);
+      color: var(--primary-color);
+      box-shadow: 0 1px var(--primary-color);
     }
   }
   & .addToCardAndDeliveryContainer {
@@ -142,6 +142,7 @@
 .imageContainer {
   width: 40%;
   margin-top: 2rem;
+  
   @include flex(center, center);
   padding-right: 1rem;
   @include responsive-lg() {
@@ -262,7 +263,7 @@
 
 
 .ratingInReview {
-  color: var(--text-color) !important;
+  color: var(--primary-color) !important;
   margin-top: 0;
   svg {
     width: 1.6rem;

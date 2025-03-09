@@ -12,7 +12,7 @@ const HomeSectionTitle: React.FC<IProps> = ({
   tag,
   title,
   className,
-  color = "var(--text-color)",
+  color = "var(--primary-color)",
 }) => {
   const classes = useMemo(() => ` ${style.title} ${className}`, [className]);
   if (tag === "h1") {

@@ -33,7 +33,7 @@
     width: 100%;
     max-width: 100%;
     padding: 0 20px;
-    border: 1px solid var(--text-color);
+    border: 1px solid var(--primary-color);
   }
 }
 
@@ -57,7 +57,7 @@
   @include responsive-sm() {
     margin-left: 0;
     margin-right: 0;
-    color: var(--text-color);
+    color: var(--primary-color);
   }
   p {
     width: 180px;
