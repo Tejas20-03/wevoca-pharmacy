@@ -58,7 +58,8 @@ const HomeBlogs: React.FC = () => {
         <HomeSectionTitle
           color="var(--primary-color)"
           title={getText("Blogs")}
-        />
+          className={` ${style.titleText} secondary-font`}
+          />
         <Link className={`btn btn-primary ${style.viewAllBtn}`} href={`/blogs`}>
           {getText("View-All")}
         </Link>

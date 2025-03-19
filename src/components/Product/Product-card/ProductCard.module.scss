@@ -9,11 +9,7 @@
   // background: var(--secondary-color);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  overflow:hidden;
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-  }
+  overflow: hidden;
   @include responsive-lg() {
     flex: 0 0 calc(33.3% - 20px);
     max-width: calc(33.3% - 20px);
@@ -31,7 +27,6 @@
     max-width: calc(50% - 10px);
   }
   .productHeader {
-    padding: 15px;
     aspect-ratio: 1.06/1;
     position: relative;
     background: white;
@@ -203,20 +198,33 @@
     }
   }
   .productContent {
-    text-align: center;
+    text-align: left;
     padding: 5px 10px 15px;
     // border-top: 1px solid var(--border-color);
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    // border-top-left-radius: 12px;
+    // border-top-right-radius: 12px;
     @include responsive-sm() {
       @include flex(center, center, column);
       border-top: none;
       padding: 25px 10px 15px;
     }
+    >  Typography, > p {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 5px;
+    }
     a {
       text-decoration: inherit;
       color: inherit;
+      font-family: "DINNextLTArabic", sans-serif !important;
+      line-height: 2px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      
       p {
+        
         @include responsive-md() {
           font-size: 0.9rem;
         }
@@ -229,7 +237,7 @@
     p {
       font-weight: 500;
       display: -webkit-box;
-      -webkit-line-clamp: 2;
+      // -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-transform: capitalize;
@@ -241,8 +249,8 @@
       }
     }
     .productFirstLine {
-      @include flex(space-around, center);
-      margin-top: 10px;
+      @include flex(flex-start, center);
+      margin-top: 5px;
       @include responsive-md() {
         @include flex(center, center, row, wrap);
       }
@@ -257,6 +265,12 @@
       }
       .priceBox {
         @include flex(flex-start, flex-end);
+        background: var(--primary-color);
+        padding: 5px 10px;
+        border-radius: 8px;
+        margin-right: 5px;
+        transition: all 0.3s ease;
+
         @include responsive-md() {
           order: 3;
           flex: 0 0 100%;
@@ -268,9 +282,10 @@
           flex-direction: column;
           align-items: flex-start;
         }
+
         p {
           &.regularPrice {
-            color: var(--text-color);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.8rem;
             text-decoration: line-through;
             margin-left: 5px;
@@ -284,15 +299,19 @@
             }
           }
           &.salePrice {
-            color: var(--primary-color);
-            font-weight: 500;
-            font-size: 1.3rem;
-            transform: translateY(2px);
+            color: var(--bg-color);
+            font-weight: 700;
+            font-family: "DINNextLTArabic", sans-serif !important;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            transform: translateY(0);
+
             @include responsive-md() {
               font-size: 1rem;
             }
             @include responsive-sm() {
               font-weight: 600;
+              font-size: 0.95rem;
             }
           }
         }
@@ -349,6 +368,10 @@
     }
     .priceBox {
       @include flex(flex-start, flex-end);
+      background: var(--primary-color);
+      padding: 5px 10px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
       @include responsive-sm() {
         flex-direction: column;
         align-items: flex-start;

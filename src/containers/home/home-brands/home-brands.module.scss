@@ -76,13 +76,23 @@
   }
 }
 .mainContainer {
-  overflow: hidden;
+  position: relative;
+  padding-bottom: 1rem;
+  border-bottom: 16px solid var(--primary-color);
+  padding-left: 0px !important;
+  padding-right: 0px !important;
   @include responsive-sm() {
-    padding-top: 1.5rem;
-    padding-bottom: 1rem;
+    padding-right: 0;
   }
-  // background-color: #d4e9e5;
-  // padding: 1.5rem;
-  // border-radius: 20px;
-  // margin-bottom: 20px;
+  h1 {
+    @include responsive-sm() {
+      color: var(--text-color) !important;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.titleText {
+  font-weight: 600 !important;
 }

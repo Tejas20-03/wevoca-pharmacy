@@ -22,7 +22,7 @@ const HomeMobileCategory: React.FC<IProps> = ({ sectionTitle, data }) => {
     <Container className={style.mainContainer}>
       <div className={style.container}>
         <Box className={style.titleContainer}>
-          <HomeSectionTitle title={sectionTitle} />
+          <HomeSectionTitle title={sectionTitle} className={` ${style.titleText} secondary-font`} />
         </Box>
         <div className={style.grid}>
           {data.map((item, index) => (

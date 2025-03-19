@@ -94,6 +94,7 @@ const HomeProducts: React.FC<IProps> = ({ productBannerType }) => {
             <HomeSectionTitle
               title={sectionTitle}
               color="var(--primary-color)"
+              className={` ${style.titleText} secondary-font`}
             />
             <div className={style.btnGroup}>
               <button
@@ -125,8 +126,8 @@ const HomeProducts: React.FC<IProps> = ({ productBannerType }) => {
               swiper.navigation.update();
             }}
             className={style.productSwiper}
-            slidesPerView={4}
-            spaceBetween={25}
+            slidesPerView={5}
+            spaceBetween={15}
             modules={[Navigation]}
             breakpoints={{
               0: {
@@ -142,11 +143,11 @@ const HomeProducts: React.FC<IProps> = ({ productBannerType }) => {
                 spaceBetween: 10,
               },
               992: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 spaceBetween: 15,
               },
               993: {
-                slidesPerView: 4,
+                slidesPerView: 5,
                 spaceBetween: 25,
               },
             }}

@@ -27,9 +27,9 @@ const HomeDesktopCategory: React.FC<IProps> = ({ sectionTitle, data }) => {
   const { language } = useLanguage();
 
   return (
-    <Container className={style.mainContainer}>
+    <Container className={style.mainContainer} >
       <Box className={style.titleWrapper}>
-        <HomeSectionTitle title={sectionTitle} color="var(--primary-color)" />
+        <HomeSectionTitle title={sectionTitle} color="var(--primary-color)" className={` ${style.titleText} secondary-font`}/>
         <div className={style.btnGroup}>
           <button className={`swiper-button`} ref={navigationPrevRef}>
             <LeftArrowWithBg />

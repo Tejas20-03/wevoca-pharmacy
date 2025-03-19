@@ -1,5 +1,23 @@
 @import "@/styles/mixins";
 
+.mainContainer {
+  position: relative;
+  padding-bottom: 1rem;
+  border-bottom: 16px solid var(--primary-color);
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  @include responsive-sm() {
+    padding-right: 0;
+  }
+  h1 {
+    @include responsive-sm() {
+      color: var(--text-color) !important;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
 .titleContainer {
   @include flex(space-between, center, row, wrap);
   margin-bottom: 10px;
@@ -35,8 +53,9 @@
     }
   }
 }
-
-
+.titleText {
+  font-weight: 600 !important;
+}
 
 .grid {
   display: flex;

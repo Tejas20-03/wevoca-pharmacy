@@ -1,8 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 @font-face {
-  font-family: 'Retrograde';
-  src: url('/fonts/Retrograde.ttf') format('truetype');
+  font-family: "Retrograde";
+  src: url("/fonts/Retrograde.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DINNextLTArabic";
+  src: url("/fonts/DINNextLTArabic-Regular_1.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -12,7 +20,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family:  "Retrograde", sans-serif !important;
+  font-family: "Retrograde", "DINNextLTArabic", sans-serif;
+}
+
+.secondary-font {
+  font-family: "DINNextLTArabic", sans-serif !important;
 }
 
 body {
@@ -117,7 +129,7 @@ button {
 }
 
 .btn.primary {
-  background: var(--primary-color);
+  background: var(--secondary-color);
   color: white;
 }
 .btn.secondary {

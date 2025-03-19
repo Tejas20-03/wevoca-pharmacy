@@ -20,6 +20,7 @@ import { useLanguage } from "@/language-context/LanguageContext";
 import { GetTranslatedData } from "@/services/footer/services";
 import { useQuery } from "@tanstack/react-query";
 import Cookies from "js-cookie";
+import HomeSectionTitle from "@/containers/home/common/home-section-title/home-section-title";
 
 interface IProps {
   windowWidth: number;
@@ -98,7 +99,8 @@ const HeaderDesktop: React.FC<IProps> = ({
             lg={2}
             sx={{ paddingTop: "0 !important" }}
           >
-            <LogoSec2 style={style.logo} windowWidth={windowWidth} />
+            {/* <LogoSec2 style={style.logo} windowWidth={windowWidth} /> */}
+            <HomeSectionTitle color="var(--bg-color)" title={"wevoca"} />
           </Grid>
           <Grid
             item
@@ -121,7 +123,7 @@ const HeaderDesktop: React.FC<IProps> = ({
             />
             <Buttons
               btnClickFunction={instantOrderFunc}
-              btnClass={`primary btn-half-rounded ${style.instantOrder}`}
+              btnClass={`primary btn-half-rounded ${style.instantOrder} secondary-font`}
             >
               <PrescriptionIcon color="var(--text-color)" />{" "}
               {getText("Instant-Order")}

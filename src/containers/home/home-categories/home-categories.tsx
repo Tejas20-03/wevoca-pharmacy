@@ -48,8 +48,8 @@ const HomeCategories: React.FC<IProps> = () => {
   );
   return (
     <>
-      <div className={style.container}>
-        <Container>
+      <div className={style.container} >
+        <Container className={style.categoryContainer}>
           {homeCategoryError ? (
             ""
           ) : homeCategoryLoader ? (

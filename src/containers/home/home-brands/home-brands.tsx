@@ -83,6 +83,8 @@ const HomeBrands: React.FC = () => {
                 ? homeBrand?.Description
                 : homeBrand?.DescriptionArabic
             }
+            className={` ${style.titleText} secondary-font`}
+
           />
           <Link
             className={`btn btn-primary ${style.viewAllBtn}`}

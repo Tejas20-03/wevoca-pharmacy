@@ -2,12 +2,11 @@
 
 .container {
   width: 100%;
-  
-  @include padding-vertical(1rem);
+
+  @include padding-vertical(0.5rem);
   @include flex();
   flex-direction: column;
   @include transition();
-  
 
   @include responsive-sm() {
     padding-top: 0.7rem;
@@ -19,8 +18,10 @@
 }
 .mainContainer {
   position: relative;
-  padding-bottom: 2rem;
-  border-bottom: 8px solid var(--primary-color);
+  padding-bottom: 1rem;
+  border-bottom: 16px solid var(--primary-color);
+  padding-left: 0px !important;
+  padding-right: 0px !important;
   @include responsive-sm() {
     padding-right: 0;
   }
@@ -28,8 +29,8 @@
     @include responsive-sm() {
       color: var(--text-color) !important;
       font-weight: 600;
-      margin-bottom: 1.3rem;
-    } 
+      margin-bottom: 1rem;
+    }
   }
 }
 .productSwiper {
@@ -56,12 +57,13 @@
     }
   }
 }
-.titleWrapper{
+.titleWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1rem;
-  
+}
+.titleText {
+  font-weight: 600 !important;
 }
 .slide {
   .productCard {
@@ -96,9 +98,9 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin: 0 auto 20px auto;
+  // margin: 0 auto 20px auto;
   position: absolute;
-  top: 0;
+  // top: 0;
   right: 0;
   margin-right: 25px;
   [dir="rtl"] & {

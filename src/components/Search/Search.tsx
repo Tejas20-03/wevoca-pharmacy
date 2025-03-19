@@ -170,7 +170,7 @@ const SearchComp: React.FC<IProps> = ({ SearchClass, searchFunc }) => {
           className={`${Style.searchIconWrapper} search-btn`}
           onClick={handleSearch}
         >
-          <SearchIcon color="--primary-color" />
+          <SearchIcon color="--bg-color" />
         </SearchIconWrapper>
 
         <StyledInputBase
@@ -181,7 +181,7 @@ const SearchComp: React.FC<IProps> = ({ SearchClass, searchFunc }) => {
           value={searchText}
           className="search-input"
           style={{
-            color: "var(--primary-color)",
+            color: "var(--bg-color)",
             fontWeight: "500",
             fontSize: "14px",
           }}
