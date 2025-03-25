@@ -6,24 +6,43 @@
     padding-bottom: 120px;
   }
 }
+
+.mainContainer {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+  margin-bottom: 40px;
+  
+  @include responsive-sm() {
+    padding: 15px;
+  }
+}
 .container {
   width: 100%;
   @include flex(center, flex-start);
-  margin-top: 70px;
-  margin-bottom: 70px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
   @include responsive-md() {
     @include flex(center, flex-start, column);
-    margin-top: 40px;
+    margin-top: 30px;
+    padding: 20px;
   }
   @include responsive-sm() {
     margin-top: 0;
     margin-bottom: 2rem;
+    padding: 15px;
   }
 }
 
 .contentContainer {
   width: 60%;
-  padding-left: 1rem;
+
   @include responsive-lg() {
     width: 65%;
   }
@@ -33,17 +52,25 @@
   }
   & .productTitle {
     color: var(--primary-color);
-    line-height: 1;
-    font-weight: 500;
-    font-size: 1.2rem;
-    padding-bottom: 0.8rem;
+    line-height: 1.4;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1.5rem;
+    
     @include responsive-sm() {
       text-align: center;
       line-height: 1.4;
+      font-size: 1.2rem;
     }
   }
   & .perCaseAndQtyPriceContainer {
     @include flex(center, center);
+    background-color: #f8f8f8;
+    // padding: 15px;
+    border-radius: 6px;
+    // margin: 15px 0;
     @include responsive-sm() {
       @include flex(center, center, column, wrap);
     }
@@ -52,47 +79,62 @@
       @include flex(flex-end);
       & .priceContainer {
         @include flex(center, center, coloumn);
-        margin-right: 10px;
+        margin-right: 15px;
         & .price {
           color: var(--primary-color);
-          font-weight: 600;
-          font-size: 1rem;
+          font-weight: 700;
+          font-size: 1.2rem;
           padding-right: 0.7rem;
         }
         & .cutPrice {
           color: var(--text-color-grey);
-
           font-weight: 300;
-          font-size: 0.8rem;
+          font-size: 0.9rem;
           text-decoration-line: line-through;
         }
       }
     }
   }
   & .brandName {
-    margin: 0px 0 5px;
+    margin: 15px 0;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eaeaea;
+
     @include responsive-sm() {
-      margin: 0px 0 10px;
+      margin: 10px 0;
+      text-align: center;
     }
+
     h2 {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--primary-color);
+      
       @include responsive-sm() {
         text-align: center;
       }
     }
+    
     a {
       text-transform: capitalize;
       text-decoration: none;
       font-weight: 600;
       color: var(--primary-color);
       box-shadow: 0 1px var(--primary-color);
+      transition: all 0.3s ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
+
   & .addToCardAndDeliveryContainer {
     @include flex(space-between, self-end);
     padding-top: 5%;
     padding-bottom: 1%;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
 
     @include responsive-sm() {
       padding-top: 5%;
@@ -126,6 +168,11 @@
         padding: 1rem 2.5rem;
         font-weight: 500;
         text-transform: uppercase;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          transform: translateY(-2px);
+        }
       }
       & .notifyMe {
         background-color: var(--error-color);
@@ -141,32 +188,35 @@
 
 .imageContainer {
   width: 40%;
-  margin-top: 2rem;
+  @include flex(center, flex-start);
+  padding-right: 2rem;
   
-  @include flex(center, center);
-  padding-right: 1rem;
   @include responsive-lg() {
     width: 35%;
   }
+  
   @include responsive-md() {
     width: 100%;
-    margin-bottom: 20px;
-    justify-content: flex-start;
-  }
-  @include responsive-sm() {
-    margin-top: 0;
+    margin-bottom: 30px;
+    padding-right: 0;
     justify-content: center;
-    margin-bottom: 40px;
   }
   & .imgInnerContainer {
-    width: 300px;
-    max-width: 90%;
+    width: 400px;
+    max-width: 100%;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    
+
+    
     @include responsive-md() {
-      width: 250px;
+      width: 280px;
     }
   }
 }
-
 .relativeSlider {
   position: relative;
   .btnGroup {
@@ -235,6 +285,9 @@
   @include flex(flex-start, flex-start);
   flex-direction: column !important;
   margin: 20px 0 !important;
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 6px;
   @include responsive-sm() {
     margin: 20px auto 0 !important;
     width: 70%;
@@ -260,8 +313,6 @@
   }
 }
 
-
-
 .ratingInReview {
   color: var(--primary-color) !important;
   margin-top: 0;
@@ -272,14 +323,24 @@
 }
 
 .productReviewList {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   @include flex(flex-start, center, row, wrap);
+  background-color: #f0f7ff;
+  padding: 10px 15px;
+  border-radius: 6px;
   p {
     margin-left: 10px;
     text-transform: capitalize;
     font-weight: 600;
     color: #2a579b;
     cursor: pointer;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+
   }
   @include responsive-sm() {
     @include flex(center, center, row, wrap);

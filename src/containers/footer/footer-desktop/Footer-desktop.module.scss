@@ -1,115 +1,117 @@
 @import "@/styles/mixins";
 
 .footer {
-    display: block;
-    @include responsive-sm() {
-        display: none;
-    }
-    background-color: var(--bg-color);
+  display: block;
+  @include responsive-sm() {
+    display: none;
+  }
+  background-color: var(--primary-color);
+  padding: 40px 0 0;
+  @include responsive-md() {
     padding: 40px 0 0;
+  }
+  .footerLogo {
+    @include responsive-lg() {
+      width: 100%;
+      height: auto;
+    }
     @include responsive-md() {
-        padding: 40px 0 0;
+      width: 250px;
+      max-width: 100%;
+      height: auto;
     }
-    .footerLogo {
-        @include responsive-lg() {
-            width: 100%;
-            height: auto;
-        }
-        @include responsive-md() {
-            width: 250px;
-            max-width: 100%;
-            height: auto;
-        }
+  }
+  p {
+    color: var(--bg-color);
+    font-size: 0.9rem;
+
+    a {
+      color: var(--bg-color);
     }
+  }
+
+  h6 {
+    color: var(--bg-color);
+    font-weight: 700;
+    line-height: 1;
+    // border-left: 3px solid var(--border-line-color);
+    // padding-left: 15px;
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+  }
+
+  .Links {
+    color: var(--bg-color);
+    font-family: "DINNextLTArabic";
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    // padding-left: 20px;
+  }
+
+  .bottomFooter {
+    background: var(--secondary-color);
+    padding: 15px 0;
+    margin-top: 40px;
+
     p {
-        color: var(--primary-color);
-        font-size: 0.9rem;
-
-        a {
-            color: var(--secondary-color);
-        }
-    }
-
-    h6 {
-        color: var(--secondary-color);
-        font-weight: 700;
-        line-height: 1;
-        // border-left: 3px solid var(--border-line-color);
-        // padding-left: 15px;
-        font-size: 1.25rem;
-        margin-bottom: 30px;
-    }
-
-    .Links {
-        color: var(--secondary-color);
-        text-decoration: none;
-        display: block;
-        margin-bottom: 20px;
-        font-size: 0.9rem;
-        // padding-left: 20px;
-    }
-
-    .bottomFooter {
-        background: var(--primary-color);
-        padding: 15px 0;
-        margin-top: 40px;
-
-        p {
-            font-size: 0.8rem;
-            color: var(--bg-color);
-        }
-
-        ul {
-            @include flex();
-            @include list-style();
-            li {
-                a {
-                    text-decoration: none;
-                    color: var(--primary-color);
-                    font-size: 0.8rem;
-                }
-            }
-        }
-    }
-    .pipeLine {
-        span {
-            padding: 0 10px;
-            color: var(--primary-color);
-            line-height: 1;
-            transform: translateY(2px);
-            display: inline-block;
-        }
+      font-size: 0.8rem;
+      color: var(--bg-color);
     }
 
     ul {
-        @include flex(flex-start);
-        @include list-style();
-        li {
-            a {
-                text-decoration: none;
-                color: var(--primary-color);
-                font-size: 0.8rem;
-            }
+      @include flex();
+      @include list-style();
+      li {
+        a {
+          text-decoration: none;
+          color: var(--bg-color);
+          font-size: 0.8rem;
         }
+      }
     }
-    .SocialList {
-        @include flex(flex-end, flex-start, column);
-        // height: 100%;
-        p {
-            margin-bottom: 10px;
-            font-weight: 400;
-            font-size: 1.25rem;
-        }
-        li {
-            &:first-child {
-                a {
-                    padding-left: 0;
-                }
-            }
-            a {
-                display: inline-block;
-                padding: 0 8px;
-            }
-        }
+  }
+  .pipeLine {
+    span {
+      padding: 0 10px;
+      color: var(--bg-color);
+      line-height: 1;
+      transform: translateY(2px);
+      display: inline-block;
     }
+  }
+
+  ul {
+    @include flex(flex-start);
+    @include list-style();
+    li {
+      a {
+        text-decoration: none;
+        color: var(--bg-color);
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .SocialList {
+    @include flex(flex-end, flex-start, column);
+    // height: 100%;
+    p {
+      margin-bottom: 10px;
+      font-weight: 400;
+      font-size: 1.25rem;
+    }
+    li {
+      &:first-child {
+        a {
+          padding-left: 0;
+        }
+      }
+      a {
+        display: inline-block;
+        padding: 0 8px;
+      }
+    }
+  }
 }

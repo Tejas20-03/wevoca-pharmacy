@@ -9,6 +9,7 @@ import { useLanguage } from "@/language-context/LanguageContext";
 import { GetTranslatedData } from "@/services/footer/services";
 import Cookies from "js-cookie";
 import { useQuery } from "@tanstack/react-query";
+import Buttons from "@/components/Button/Buttons";
 const HomeSectionTitle = dynamic(
   () => import("@/containers/home/common/home-section-title/home-section-title")
 );
@@ -40,7 +41,7 @@ const HomeAbout: React.FC = () => {
   };
   return (
     <>
-      <Container>
+      <Container className={style.mainContainer}>
         <Box className={style.titleContainer}>
           <div
             className={`${style.content} ${
@@ -50,9 +51,9 @@ const HomeAbout: React.FC = () => {
             <HomeSectionTitle
               tag="h1"
               className={style.aboutHeading}
-              color="var(--primary-color)"
+              color="var(--secondary-color)"
               //   title="DVAGO - Pakistan’s Best Online Pharmacy & Medical Store"
-              title="TEMP - Country's Best Online Pharmacy & Medical Store"
+              title="WEVOCA - Country's Best Online Pharmacy & Medical Store"
             />
             <Typography>
               Our primary goal, being Country's best and trusted pharmacy and
@@ -175,13 +176,16 @@ const HomeAbout: React.FC = () => {
                         </ul> */}
           </div>
           <div
-            className={`${style.SeeMoreBtn} ${
+            className={` ${style.SeeMoreBtn} ${
               showMore ? style.SeeMoreBtnOpened : ""
             }`}
           >
-            <button onClick={() => setShowMore(!showMore)}>
+            <Buttons
+              btnClickFunction={() => setShowMore(!showMore)}
+              btnClass="secondary-font"
+            >
               {!showMore ? getText("Show-More") : getText("Show-Less")}
-            </button>
+            </Buttons>
           </div>
         </Box>
       </Container>

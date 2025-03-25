@@ -9,6 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 import { GetTranslatedData } from "@/services/footer/services";
 import Cookies from "js-cookie";
 import { useLanguage } from "@/language-context/LanguageContext";
+import HomeSectionTitle from "@/containers/home/common/home-section-title/home-section-title";
 
 interface IProps {
   handleOrders: () => void;
@@ -47,14 +48,15 @@ const FooterDesktop: React.FC<IProps> = ({ handleOrders, handleAccount }) => {
         <Grid container spacing={{ xs: 2, md: 3 }}>
           <Grid item xs={3} sm={6} md={4} lg={3}>
             <Link href={"/"}>
-              <Image
+              {/* <Image
                 className={style.footerLogo}
                 // src="/assets/dvago-white-logo.svg"
                 src="/assets/favicon.png"
                 alt="footer logo"
                 width={160}
                 height={90}
-              />
+              /> */}
+              <HomeSectionTitle color="var(--bg-color)" title={"wevoca"} />
             </Link>
             <Typography sx={{ mt: 1 }} paragraph={true}>
               {getText("Countrys-most-trusted-pharmacy")}
@@ -211,7 +213,7 @@ const FooterDesktop: React.FC<IProps> = ({ handleOrders, handleAccount }) => {
               alignItems: "center",
             }}
           >
-            <p>© {date} TEMP. Design</p>
+            <p>© {date} WEVOCA. Design</p>
           </Box>
         </Container>
       </div>

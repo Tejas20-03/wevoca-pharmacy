@@ -469,9 +469,7 @@ const ProductDetail: React.FC<Props> = ({
                         {productReviews?.Data?.length} Rating
                       </Typography>
                     </Box>
-                  ) : (
-                    ""
-                  )}
+                  ) : null}
                   <div className={style.brandName}>
                     <Typography
                       className={style.perCase}
@@ -485,6 +483,47 @@ const ProductDetail: React.FC<Props> = ({
                     </Typography>
                   </div>
                   <div className={style.perCaseAndQtyPriceContainer}>
+                    {productDetailData?.Variation?.length > 0 ? (
+                      <Formik initialValues={initialValue} onSubmit={() => {}}>
+                        {() => (
+                          <RadioBtn
+                            classes={`${style.variationRadioGroup} ${style.doubleVariant}`}
+                            isVariationAvaiable={
+                              productDetailData?.Variation?.[0]
+                                ?.AvailableQty === "0" &&
+                              productDetailData?.Variation?.[1]
+                                ?.AvailableQty === "0"
+                                ? true
+                                : false
+                            }
+                            name={`feedbackRadio2`}
+                            cateogryOption={cateogryOption}
+                            selectedOptionVal={selectedOptionVal}
+                            setSelectedOptionVal={setSelectedOptionVal}
+                          />
+                        )}
+                      </Formik>
+                    ) : (
+                      <Formik initialValues={initialValue} onSubmit={() => {}}>
+                        {() => (
+                          <RadioBtn
+                            classes={`${style.variationRadioGroup} ${style.singleVariant}`}
+                            isVariationAvaiable={
+                              productDetailData?.Variation?.[0]
+                                ?.AvailableQty === "0" &&
+                              productDetailData?.Variation?.[0]
+                                ?.AvailableQty === "0"
+                                ? true
+                                : false
+                            }
+                            name={`feedbackRadio2`}
+                            cateogryOption={cateogryOption.slice(0, 1)}
+                            selectedOptionVal={selectedOptionVal}
+                            setSelectedOptionVal={setSelectedOptionVal}
+                          />
+                        )}
+                      </Formik>
+                    )}
                     <div className={style.priceQtyContainer}>
                       <div className={style.priceContainer}>
                         {productDetailData?.Variation?.length > 0 ? (
@@ -622,47 +661,7 @@ const ProductDetail: React.FC<Props> = ({
                       <div className={style.qtyContainer}></div>
                     </div>
                   </div>
-                  {productDetailData?.Variation?.length > 0 ? (
-                    <Formik initialValues={initialValue} onSubmit={() => {}}>
-                      {() => (
-                        <RadioBtn
-                          classes={`${style.variationRadioGroup} ${style.doubleVariant}`}
-                          isVariationAvaiable={
-                            productDetailData?.Variation?.[0]?.AvailableQty ===
-                              "0" &&
-                            productDetailData?.Variation?.[1]?.AvailableQty ===
-                              "0"
-                              ? true
-                              : false
-                          }
-                          name={`feedbackRadio2`}
-                          cateogryOption={cateogryOption}
-                          selectedOptionVal={selectedOptionVal}
-                          setSelectedOptionVal={setSelectedOptionVal}
-                        />
-                      )}
-                    </Formik>
-                  ) : (
-                    <Formik initialValues={initialValue} onSubmit={() => {}}>
-                      {() => (
-                        <RadioBtn
-                          classes={`${style.variationRadioGroup} ${style.singleVariant}`}
-                          isVariationAvaiable={
-                            productDetailData?.Variation?.[0]?.AvailableQty ===
-                              "0" &&
-                            productDetailData?.Variation?.[0]?.AvailableQty ===
-                              "0"
-                              ? true
-                              : false
-                          }
-                          name={`feedbackRadio2`}
-                          cateogryOption={cateogryOption.slice(0, 1)}
-                          selectedOptionVal={selectedOptionVal}
-                          setSelectedOptionVal={setSelectedOptionVal}
-                        />
-                      )}
-                    </Formik>
-                  )}
+
                   <div className={style.addToCardAndDeliveryContainer}>
                     <div className={style.DeliveryContainer}>
                       {productDetailJson &&
@@ -692,7 +691,7 @@ const ProductDetail: React.FC<Props> = ({
                       ) : productDetailJson?.Data?.[0]?.AvailableQty ===
                         undefined ? (
                         <Buttons
-                          btnClass={`secondary btn-half-rounded add-to-cart-btn ${style.btn} ${style.greyOut}`}
+                          btnClass={`secondary btn-half-rounded add-to-cart-btn secondary-font ${style.btn} ${style.greyOut}`}
                         >
                           {" "}
                           {getText("add-to-cart")}
@@ -700,7 +699,7 @@ const ProductDetail: React.FC<Props> = ({
                       ) : (
                         <Buttons
                           btnClickFunction={handleAddProductInCart}
-                          btnClass={`secondary btn-half-rounded add-to-cart-btn ${style.btn}`}
+                          btnClass={`secondary btn-half-rounded add-to-cart-btn secondary-font ${style.btn}`}
                         >
                           {" "}
                           {getText("add-to-cart")}

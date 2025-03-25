@@ -11,7 +11,7 @@ interface IProps {
     iconColor?: string;
 }
 
-const SocialIconIndex: React.FC<IProps> = ({ classes, iconColor = '--primary-color' }) => {
+const SocialIconIndex: React.FC<IProps> = ({ classes, iconColor = '--secondary-color' }) => {
     const socialClass = `${style.globalStyle} ${classes?.length && classes}`;
     return (
         <ul className={socialClass}>
