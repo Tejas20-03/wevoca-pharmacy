@@ -3,7 +3,7 @@
 .container {
   width: 100%;
 
-  @include padding-vertical(0.5rem);
+  @include padding-vertical(1rem);
   @include flex();
   flex-direction: column;
   @include transition();
@@ -18,8 +18,8 @@
 }
 .mainContainer {
   position: relative;
-  padding-bottom: 1rem;
-  border-bottom: 16px solid var(--primary-color);
+  padding-bottom: 2rem;
+  border-bottom: 12px solid var(--primary-color);
   padding-left: 0px !important;
   padding-right: 0px !important;
   @include responsive-sm() {
@@ -63,7 +63,9 @@
   justify-content: space-between;
 }
 .titleText {
+  text-transform: uppercase !important;
   font-weight: 600 !important;
+  font-size: 36px !important;
 }
 .slide {
   .productCard {

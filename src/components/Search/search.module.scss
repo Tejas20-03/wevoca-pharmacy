@@ -1,4 +1,4 @@
-@import '@/styles/mixins';
+@import "@/styles/mixins";
 
 header {
   .search {
@@ -6,6 +6,7 @@ header {
     font-weight: 400;
     position: relative;
     border-radius: 12px;
+    border: 1px solid var(--secondary-color);
     @include responsive-xl() {
       flex: 1;
       width: initial;
@@ -42,30 +43,30 @@ header {
   width: 100%;
   ul {
     @include list-style();
-    background: var(--bg-color);
+    background: var(--secondary-color);
     padding-left: 10px;
     padding-right: 10px;
-    border: 1px solid var(--bg-color);
+    border: 1px solid var(--secondary-color);
     border-top: 0;
     max-height: 200px;
     overflow: auto;
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: -14px;
       left: 0;
       width: 1px;
       height: 30px;
-      background: var(--bg-color);
+      background: var(--secondary-color);
     }
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: -14px;
       right: 0;
       width: 1px;
       height: 30px;
-      background: var(--bg-color);
+      background: var(--secondary-color);
     }
     &::-webkit-scrollbar {
       display: none;
@@ -85,14 +86,14 @@ header {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        border-bottom: 1px solid var(--text-color-lightgrey);
+        border-bottom: 1px solid var(--primary-color);
         font-size: 0.9rem;
       }
     }
   }
   .viewAll {
     text-align: center;
-    border: 1px solid var(--bg-color);
+    border: 1px solid var(--secondary-color);
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     border-top: 0;
@@ -104,7 +105,7 @@ header {
     button {
       @include ButtonReset();
       box-shadow: 0 1px 0 var(--bg-color);
-      color: var(--text-color);
+      color: var(--secondary-color);
       font-size: 0.8rem;
     }
   }

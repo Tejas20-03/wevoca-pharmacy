@@ -99,8 +99,8 @@ const HeaderDesktop: React.FC<IProps> = ({
             lg={2}
             sx={{ paddingTop: "0 !important" }}
           >
-            {/* <LogoSec2 style={style.logo} windowWidth={windowWidth} /> */}
-            <HomeSectionTitle color="var(--bg-color)" title={"wevoca"} />
+            <LogoSec2 style={style.logo} windowWidth={windowWidth} />
+            {/* <HomeSectionTitle color="var(--bg-color)" title={"wevoca"} /> */}
           </Grid>
           <Grid
             item
@@ -123,7 +123,7 @@ const HeaderDesktop: React.FC<IProps> = ({
             />
             <Buttons
               btnClickFunction={instantOrderFunc}
-              btnClass={`primary btn-half-rounded ${style.instantOrder} secondary-font`}
+              btnClass={`secondary btn-half-rounded ${style.instantOrder} secondary-font`}
             >
               <PrescriptionIcon color="var(--text-color)" />{" "}
               {getText("Instant-Order")}
@@ -132,7 +132,7 @@ const HeaderDesktop: React.FC<IProps> = ({
               <button
                 className={`${style.langBtn} ${
                   language === "en" ? style.active : ""
-                }`}
+                } btn-half-rounded secondary-font`}
                 onClick={() => setLanguage("en")}
               >
                 EN
@@ -140,7 +140,7 @@ const HeaderDesktop: React.FC<IProps> = ({
               <button
                 className={`${style.langBtn} ${
                   language === "ar" ? style.active : ""
-                }`}
+                } btn-half-rounded secondary-font`}
                 onClick={() => setLanguage("ar")}
               >
                 عربي
@@ -149,21 +149,25 @@ const HeaderDesktop: React.FC<IProps> = ({
             <CartAndUserContainer />
           </Grid>
         </Grid>
-        <ul className={style.categoryMenu}>
-          {categoryMenuResponse?.length > 0
-            ? categoryMenuResponse.map((menuItems, index) => (
-                <React.Fragment key={index}>
-                  <>
-                    {menuItems?.length > 0 &&
-                      menuItems.map((item, index) => (
-                        <CategoryMenu key={index} item={item} />
-                      ))}
-                  </>
-                </React.Fragment>
-              ))
-            : ""}
-        </ul>
       </Container>
+      <div className={style.categoryDiv}>
+        <Container maxWidth="lg">
+          <ul className={style.categoryMenu}>
+            {categoryMenuResponse?.length > 0
+              ? categoryMenuResponse.map((menuItems, index) => (
+                  <React.Fragment key={index}>
+                    <>
+                      {menuItems?.length > 0 &&
+                        menuItems.map((item, index) => (
+                          <CategoryMenu key={index} item={item} />
+                        ))}
+                    </>
+                  </React.Fragment>
+                ))
+              : ""}
+          </ul>
+        </Container>
+      </div>
     </header>
   );
 };
