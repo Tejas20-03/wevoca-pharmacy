@@ -65,7 +65,7 @@ const LoginModal: React.FC<Props> = () => {
             className={style.closeBtn}
             onClick={() => dispatch(closeLoginPopup())}
           >
-            <CloseIcon color="--text-color" />
+            <CloseIcon color="--primary-color" />
           </button>
           {isOtpScreen && (
             <LoginOtpCard

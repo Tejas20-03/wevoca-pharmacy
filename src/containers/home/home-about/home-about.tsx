@@ -51,7 +51,7 @@ const HomeAbout: React.FC = () => {
             <HomeSectionTitle
               tag="h1"
               className={style.aboutHeading}
-              color="var(--secondary-color)"
+              color="var(--text-color)"
               //   title="DVAGO - Pakistan’s Best Online Pharmacy & Medical Store"
               title="WEVOCA - Country's Best Online Pharmacy & Medical Store"
             />

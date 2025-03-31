@@ -1,6 +1,11 @@
 .mainContainer {
-  padding-left: 0px !important;
-  padding-right: 0px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  background-color:var(--primary-color);
+  color:var(--text-color);
+  border-radius:12px;
+  margin-top:20px;
+  margin-bottom:20px;
 }
 
 .titleContainer {
@@ -10,6 +15,7 @@
   .content {
     a {
       color: var(--secondary-color);
+      text-decoration: none;
     }
   }
   .content,
@@ -17,8 +23,9 @@
     height: 150px;
     overflow: hidden;
     .aboutHeading {
-      font-size: 1.7rem;
+      font-size: 2rem;
       margin-bottom: 10px;
+      font-weight: 600;
     }
     h1 {
       margin-bottom: 15px;
@@ -29,7 +36,7 @@
     }
     h2 {
       font-weight: 600;
-      color: var(--secondary-color);
+      color: var(--bg-color);
       font-family: "DINNextLTArabic";
       line-height: 1.2;
       font-size: 1.3rem;
@@ -43,7 +50,7 @@
         padding: 5px 0;
         font-size: 0.8rem;
         strong {
-          color: var(--primary-color);
+          color: var(--secondary-color);
         }
       }
     }
@@ -56,7 +63,7 @@
     width: 100%;
     padding: 50px 0 20px;
     text-align: center;
-    background: linear-gradient(360deg, var(--bg-color) 50%, transparent);
+    background: linear-gradient(360deg, var(--primary-color) 50%, transparent);
     margin-top: -50px;
     position: relative;
     z-index: 3;

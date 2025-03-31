@@ -115,7 +115,7 @@ const LoginCredentialCard: React.FC<IProps> = ({
 
   return (
     <>
-      <Typography id="modal-modal-title" variant="h4" component="h1">
+      <Typography id="modal-modal-title" variant="h4" component="h1" className={style.headingColor}>
         {getText("Hey-There")}
       </Typography>
       <Typography id="modal-modal-description" sx={{ mt: 2 }}>
