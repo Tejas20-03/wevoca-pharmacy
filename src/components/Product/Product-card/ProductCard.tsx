@@ -311,7 +311,7 @@ const ProductCard: React.FC<productCardProp> = ({ data, className }) => {
               `${data.Title?.toLowerCase()} Product Image` || "Product Image"
             }
           />
-          <div className={style.overlay}>
+          {/* <div className={style.overlay}>
             {outOfStock ? (
               <Typography className={style.outofstock}>Out of Stock</Typography>
             ) : null}
@@ -358,7 +358,7 @@ const ProductCard: React.FC<productCardProp> = ({ data, className }) => {
                 <CartIcon color="--text-color-alt" />
               </button>
             ) : null}
-          </div>
+          </div> */}
         </div>
         <div className={style.productContent}>
           <Typography>
@@ -368,6 +368,16 @@ const ProductCard: React.FC<productCardProp> = ({ data, className }) => {
                 : data.TitleArabic?.toLowerCase()}
             </Link>
           </Typography>
+          <Typography className={style.categoryName}>
+            {data.Category}
+          </Typography>
+          <button
+            onClick={addToCart}
+            className={style.desktopAddToCart}
+            disabled={outOfStock}
+          >
+            <span>+</span> {getText("add-to-cart")}
+          </button>
           <div className={style.productFirstLine}>
             <div className={style.priceBox}>
               {data.DiscountPrice !== "0" ? (
