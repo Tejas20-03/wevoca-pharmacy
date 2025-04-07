@@ -22,7 +22,7 @@
   --text-color-lightest: #bfc9da;
   --text-color-lighter: #7d8fab;
   --text-color-light: #5b5b5b;
-  --text-color: #adddd3;
+  --text-color: #1d6f60;
   /* --text-color-pink: #bb5a77; */
   --text-color-pink: #045f4f;
   --text-color-grey: #7d8fab;
@@ -44,7 +44,7 @@
 
   --icon-color: #c4cdd5;
 
-  --border-color: #e8ecf2;
+  --border-color: #1d6f60;
   /* --fill-color: #bb5a77; */
   --fill-color: #045f4f;
 }

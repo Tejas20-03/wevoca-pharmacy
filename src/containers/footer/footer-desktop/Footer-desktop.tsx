@@ -44,166 +44,167 @@ const FooterDesktop: React.FC<IProps> = ({ handleOrders, handleAccount }) => {
 
   return (
     <footer className={style.footer}>
-      <Container>
-        <Grid container spacing={{ xs: 2, md: 3 }}>
-          <Grid item xs={3} sm={6} md={4} lg={3}>
-            <Link href={"/"}>
-              {/* <Image
-                className={style.footerLogo}
-                // src="/assets/dvago-white-logo.svg"
-                src="/assets/favicon.png"
-                alt="footer logo"
-                width={160}
-                height={90}
-              /> */}
-              <HomeSectionTitle color="var(--bg-color)" title={"wevoca"} />
-            </Link>
-            <Typography sx={{ mt: 1 }} paragraph={true}>
-              {getText("Countrys-most-trusted-pharmacy")}
-            </Typography>
+      <div className={style.topFooter}>
+        <Container>
+          <div className={style.topFooterContent}>
+            <div className={style.logoSection}>
+              <Link href={"/"}>
+                <Image
+                  className={style.footerLogo}
+                  src="/assets/favicon.png"
+                  alt="footer logo"
+                  width={160}
+                  height={90}
+                />
+              </Link>
+              <Typography sx={{ mt: 1 }} paragraph={true}>
+                {getText("Countrys-most-trusted-pharmacy")}
+              </Typography>
+            </div>
             <Box className={style.SocialList}>
               <Typography>{getText("Follow-us")}</Typography>
               <SocialIconIndex />
             </Box>
+          </div>
+        </Container>
+      </div>
+      <div className={style.mainFooter}>
+        <Container>
+          <Grid container spacing={{ xs: 2, md: 3 }}>
+            <Grid item xs={3} sm={6} md={3} lg={2}>
+              <Typography variant="h6">{getText("Categories")}</Typography>
+              <Link href="/cat/medicine" className={style.Links}>
+                {getText("Medicine")}
+              </Link>
+              <Link href="/atozmedicine/A" className={style.Links}>
+                A to Z Medicine
+              </Link>
+              <Link href="/cat/baby-mother-care" className={style.Links}>
+                Baby & Mother Care
+              </Link>
+              <Link href="/cat/nutritions-supplements" className={style.Links}>
+                Nutrition & Supplements
+              </Link>
+              <Link href="/cat/foods-and-beverages" className={style.Links}>
+                Food & Beverage
+              </Link>
+              <Link href="/cat/devices" className={style.Links}>
+                Devices & Appliances
+              </Link>
+              <Link href="/cat/personal-care" className={style.Links}>
+                Personal Care
+              </Link>
+              <Link href="/cat/otc-medicine" className={style.Links}>
+                OTC And Health Need
+              </Link>
+            </Grid>
+            <Grid item xs={3} sm={4} md={2} lg={2}>
+              <Typography variant="h6">{getText("Navigate")}</Typography>
+              <Link prefetch={false} href="/feedback" className={style.Links}>
+                {getText("Feedback")}
+              </Link>
+              <Link prefetch={false} href="/prescription" className={style.Links}>
+                {getText("Instant-Order")}
+              </Link>
+              <Link prefetch={false} href="/deals" className={style.Links}>
+                {getText("Deals")}
+              </Link>
+              <Link prefetch={false} href="/stores" className={style.Links}>
+                {getText("Stores")}
+              </Link>
+              <Link
+                prefetch={false}
+                href={{ pathname: `` }}
+                onClick={handleOrders}
+                className={style.Links}
+              >
+                {getText("My-Orders")}
+              </Link>
+              <Link
+                prefetch={false}
+                href={{ pathname: `` }}
+                onClick={handleAccount}
+                className={style.Links}
+              >
+                {getText("User-Profile")}
+              </Link>
+              <Link prefetch={false} href="/brands" className={style.Links}>
+                {getText("Brands")}
+              </Link>
+              <Link prefetch={false} href="/blogs" className={style.Links}>
+                {getText("Blogs")}
+              </Link>
+            </Grid>
+            <Grid item xs={3} sm={4} md={3} lg={2}>
+              <Typography variant="h6">{getText("Support")}</Typography>
+              <Link
+                prefetch={false}
+                href="/faqs"
+                className={`faq ${style.Links}`}
+              >
+                {getText("FAQs")}
+              </Link>
+              <Link
+                prefetch={false}
+                href="/policies/terms-and-conditions"
+                className={`terms ${style.Links}`}
+              >
+                {getText("Terms-Of-Service")}
+              </Link>
+              <Link
+                prefetch={false}
+                href="/policies/shipping-policy"
+                className={`shipping ${style.Links}`}
+              >
+                {getText("Shipping-Policy")}
+              </Link>
+              <Link
+                prefetch={false}
+                href="/policies/return-policy"
+                className={`return ${style.Links}`}
+              >
+                {getText("Return-Policy")}
+              </Link>
+              <Link
+                prefetch={false}
+                href="/policies/refund-policy"
+                className={`refund ${style.Links}`}
+              >
+                {getText("Refund-Policy")}
+              </Link>
+              <Link
+                prefetch={false}
+                href="/policies/privacy-policy"
+                className={`policy ${style.Links}`}
+              >
+                {getText("Privacy-Policy")}
+              </Link>
+              <Link
+                prefetch={false}
+                target="_blank"
+                href="/"
+                className={`policy ${style.Links}`}
+              >
+                {getText("Careers")}
+              </Link>
+            </Grid>
+            <Grid item xs={3} sm={4} md={3} lg={3}>
+              <Typography variant="h6">{getText("Contact Us")}</Typography>
+              <Typography sx={{ mt: 1 }} paragraph={true}>
+                123, Street Name, City Name, Country
+                <br />
+                <br />
+                <strong>{getText("Phone")}:</strong>{" "}
+                <a href="/">(012) 45 67 TEMP (01234)</a>
+                <br />
+                <br />
+                <strong>{getText("Email-address")}:</strong>{" "}
+                <a href="mailto:feedback@temp.pk"> feedback@temp.pk</a>
+              </Typography>
+            </Grid>
           </Grid>
-          <Grid item xs={3} sm={6} md={3} lg={2}>
-            <Typography variant="h6">{getText("Categories")}</Typography>
-            <Link href="/cat/medicine" className={style.Links}>
-              {getText("Medicine")}
-            </Link>
-            <Link href="/atozmedicine/A" className={style.Links}>
-              A to Z Medicine
-            </Link>
-            <Link href="/cat/baby-mother-care" className={style.Links}>
-              Baby & Mother Care
-            </Link>
-            <Link href="/cat/nutritions-supplements" className={style.Links}>
-              Nutrition & Supplements
-            </Link>
-            <Link href="/cat/foods-and-beverages" className={style.Links}>
-              Food & Beverage
-            </Link>
-            <Link href="/cat/devices" className={style.Links}>
-              Devices & Appliances
-            </Link>
-            <Link href="/cat/personal-care" className={style.Links}>
-              Personal Care
-            </Link>
-            <Link href="/cat/otc-medicine" className={style.Links}>
-              OTC And Health Need
-            </Link>
-          </Grid>
-          <Grid item xs={3} sm={4} md={2} lg={2}>
-            <Typography variant="h6">{getText("Navigate")}</Typography>
-            <Link prefetch={false} href="/feedback" className={style.Links}>
-              {getText("Feedback")}
-            </Link>
-            <Link prefetch={false} href="/prescription" className={style.Links}>
-              {getText("Instant-Order")}
-            </Link>
-            <Link prefetch={false} href="/deals" className={style.Links}>
-              {getText("Deals")}
-            </Link>
-            <Link prefetch={false} href="/stores" className={style.Links}>
-              {getText("Stores")}
-            </Link>
-            <Link
-              prefetch={false}
-              href={{ pathname: `` }}
-              onClick={handleOrders}
-              className={style.Links}
-            >
-              {getText("My-Orders")}
-            </Link>
-            <Link
-              prefetch={false}
-              href={{ pathname: `` }}
-              onClick={handleAccount}
-              className={style.Links}
-            >
-              {getText("User-Profile")}
-            </Link>
-            <Link prefetch={false} href="/brands" className={style.Links}>
-              {getText("Brands")}
-            </Link>
-            <Link prefetch={false} href="/blogs" className={style.Links}>
-              {getText("Blogs")}
-            </Link>
-          </Grid>
-          <Grid item xs={3} sm={4} md={3} lg={2}>
-            <Typography variant="h6">{getText("Support")}</Typography>
-            <Link
-              prefetch={false}
-              href="/faqs"
-              className={`faq ${style.Links}`}
-            >
-              {getText("FAQs")}
-            </Link>
-            <Link
-              prefetch={false}
-              href="/policies/terms-and-conditions"
-              className={`terms ${style.Links}`}
-            >
-              {getText("Terms-Of-Service")}
-            </Link>
-            <Link
-              prefetch={false}
-              href="/policies/shipping-policy"
-              className={`shipping ${style.Links}`}
-            >
-              {getText("Shipping-Policy")}
-            </Link>
-            <Link
-              prefetch={false}
-              href="/policies/return-policy"
-              className={`return ${style.Links}`}
-            >
-              {getText("Return-Policy")}
-            </Link>
-            <Link
-              prefetch={false}
-              href="/policies/refund-policy"
-              className={`refund ${style.Links}`}
-            >
-              {getText("Refund-Policy")}
-            </Link>
-            <Link
-              prefetch={false}
-              href="/policies/privacy-policy"
-              className={`policy ${style.Links}`}
-            >
-              {getText("Privacy-Policy")}
-            </Link>
-            <Link
-              prefetch={false}
-              target="_blank"
-              // href="https://decibel-careerportal-1334.mydecibel.com/#/"
-              href="/"
-              className={`policy ${style.Links}`}
-            >
-              {getText("Careers")}
-            </Link>
-          </Grid>
-          <Grid item xs={3} sm={4} md={3} lg={3}>
-            <Typography variant="h6">{getText("Contact Us")}</Typography>
-            <Typography sx={{ mt: 1 }} paragraph={true}>
-              {/* 1st Floor, Plot No. 1 Shaheed-e-Millat Road, Modern Society MCHS,
-              Karachi, Sindh 75100, Pakistan */}
-              123, Street Name, City Name, Country
-              <br />
-              <br />
-              <strong>{getText("Phone")}:</strong>{" "}
-              {/* <a href="tel:021111138246">(021) 11 11 DVAGO (38246)</a> */}
-              <a href="/">(012) 45 67 TEMP (01234)</a>
-              <br />
-              <br />
-              <strong>{getText("Email-address")}:</strong>{" "}
-              {/* <a href="mailto:feedback@dvago.pk"> feedback@dvago.pk</a> */}
-              <a href="mailto:feedback@temp.pk"> feedback@temp.pk</a>
-            </Typography>
-          </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </div>
       <div className={style.bottomFooter}>
         <Container>
           <Box
