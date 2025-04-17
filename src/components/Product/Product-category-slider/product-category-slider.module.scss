@@ -21,7 +21,8 @@
         padding: 12px 12px;
         margin: 0 12px 0 0;
         border-radius: 8px;
-        color: var(--text-color);
+        background-color: var(--secondary-color);
+        color: white;
         @include responsive-xl() {
             font-size: 0.8rem;
         }

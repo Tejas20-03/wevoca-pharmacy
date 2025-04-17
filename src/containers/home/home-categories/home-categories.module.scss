@@ -59,7 +59,7 @@
 .mainContainer {
   position: relative;
   padding-bottom: 1rem;
-  border-bottom: 12px solid var(--primary-color);
+  border-bottom: 8px solid var(--primary-color);
   padding-left: 0px !important;
   padding-right: 0px !important;
   @include responsive-sm() {
@@ -83,10 +83,10 @@
     display: none !important;
   }
 }
-.titleText {
+.titleWrapper .titleText {
   text-transform: uppercase !important;
   font-weight: 600 !important;
-  font-size: 36px !important;
+  font-size: 30px !important;
 }
 
 .btnGroup {

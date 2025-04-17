@@ -44,30 +44,7 @@ const FooterDesktop: React.FC<IProps> = ({ handleOrders, handleAccount }) => {
 
   return (
     <footer className={style.footer}>
-      <div className={style.topFooter}>
-        <Container>
-          <div className={style.topFooterContent}>
-            <div className={style.logoSection}>
-              <Link href={"/"}>
-                <Image
-                  className={style.footerLogo}
-                  src="/assets/favicon.png"
-                  alt="footer logo"
-                  width={160}
-                  height={90}
-                />
-              </Link>
-              <Typography sx={{ mt: 1 }} paragraph={true}>
-                {getText("Countrys-most-trusted-pharmacy")}
-              </Typography>
-            </div>
-            <Box className={style.SocialList}>
-              <Typography>{getText("Follow-us")}</Typography>
-              <SocialIconIndex />
-            </Box>
-          </div>
-        </Container>
-      </div>
+      
       <div className={style.mainFooter}>
         <Container>
           <Grid container spacing={{ xs: 2, md: 3 }}>
@@ -203,6 +180,30 @@ const FooterDesktop: React.FC<IProps> = ({ handleOrders, handleAccount }) => {
               </Typography>
             </Grid>
           </Grid>
+        </Container>
+      </div>
+      <div className={style.topFooter}>
+        <Container>
+          <div className={style.topFooterContent}>
+            <div className={style.logoSection}>
+              <Link href={"/"}>
+                <Image
+                  className={style.footerLogo}
+                  src="/assets/favicon.png"
+                  alt="footer logo"
+                  width={160}
+                  height={90}
+                />
+              </Link>
+              <Typography sx={{ mt: 1 }} paragraph={true}>
+                {getText("Countrys-most-trusted-pharmacy")}
+              </Typography>
+            </div>
+            <Box className={style.SocialList}>
+              <Typography>{getText("Follow-us")}</Typography>
+              <SocialIconIndex />
+            </Box>
+          </div>
         </Container>
       </div>
       <div className={style.bottomFooter}>
