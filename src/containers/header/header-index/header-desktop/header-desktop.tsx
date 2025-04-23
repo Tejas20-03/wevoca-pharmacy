@@ -88,7 +88,7 @@ const HeaderDesktop: React.FC<IProps> = ({
 
   return (
     <header className={classes}>
-      <Container>
+      <Container sx={{paddingBottom:"20px !important"}}>
         <Grid container spacing={2}>
           <Grid
             item
@@ -113,7 +113,7 @@ const HeaderDesktop: React.FC<IProps> = ({
               display: "flex",
               alignItems: "center",
               justifyContent: "flex-end",
-              paddingTop: "0 !important",
+              paddingTop: "35px !important",
             }}
           >
             <SearchComp />

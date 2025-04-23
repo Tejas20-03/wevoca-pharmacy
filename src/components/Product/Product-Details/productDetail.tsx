@@ -691,7 +691,7 @@ const ProductDetail: React.FC<Props> = ({
                       ) : productDetailJson?.Data?.[0]?.AvailableQty ===
                         undefined ? (
                         <Buttons
-                          btnClass={`secondary btn-half-rounded add-to-cart-btn secondary-font ${style.btn} ${style.greyOut}`}
+                          btnClass={`   secondary-font ${style.desktopAddToCart}  ${style.greyOut}`}
                         >
                           {" "}
                           {getText("add-to-cart")}
@@ -699,7 +699,7 @@ const ProductDetail: React.FC<Props> = ({
                       ) : (
                         <Buttons
                           btnClickFunction={handleAddProductInCart}
-                          btnClass={`secondary btn-half-rounded add-to-cart-btn secondary-font ${style.btn}`}
+                          btnClass={` ${style.desktopAddToCart} secondary-font `}
                         >
                           {" "}
                           {getText("add-to-cart")}
