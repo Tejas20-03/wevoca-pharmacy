@@ -11,7 +11,7 @@ import { Provider } from "react-redux";
 
 import { ToastContainer } from "react-toastify";
 import Router, { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import NProgress from "nprogress";
 import "@/styles/globals.css";
 import "@/styles/theme-colors.css";
@@ -43,6 +43,7 @@ import useWindowDimensions from "@/hooks/useWindowDimensions";
 import { initMixpanel } from "../utils/mix-pnael";
 import { LanguageProvider } from "@/language-context/LanguageContext";
 import RTLWrapper from "@/rtl-wrapper/rtl-wrapper";
+import SplashScreen from "@/components/splash-screen/splash-screen";
 
 interface IProps extends AppProps {}
 
@@ -65,6 +66,8 @@ function MyApp({ Component, pageProps, ...rest }: IProps) {
   const router = useRouter();
   const { width: windowWidth } = useWindowDimensions();
   const CANONICAL_DOMAIN = "https://";
+  const [showSplash, setShowSplash] = useState(true);
+
 
   const _pathSliceLength = Math.min.apply(Math, [
     router.asPath.indexOf("?") > 0
@@ -79,6 +82,23 @@ function MyApp({ Component, pageProps, ...rest }: IProps) {
     router.asPath.substring(0, _pathSliceLength).toLowerCase();
   const { store } = wrapper.useWrappedStore(rest);
   initMixpanel();
+  useEffect(() => {
+    // Only show splash on the homepage
+    if (router.pathname !== "/") {
+      setShowSplash(false);
+    }
+    
+    // Check if user has already seen the splash screen in this session
+    const hasSeenSplash = sessionStorage.getItem('hasSeenSplash');
+    if (hasSeenSplash) {
+      setShowSplash(false);
+    }
+  }, [router.pathname]);
+  const handleSplashComplete = () => {
+    setShowSplash(false);
+    // Save to session storage so it doesn't show again in this session
+    sessionStorage.setItem('hasSeenSplash', 'true');
+  };
   useEffect(() => {
     Router.events.on("routeChangeStart", () => NProgress.start());
     Router.events.on("routeChangeComplete", () => NProgress.done(false));
@@ -137,6 +157,10 @@ function MyApp({ Component, pageProps, ...rest }: IProps) {
       }
     }
   }, [windowWidth]);
+
+  if (showSplash) {
+    return <SplashScreen onComplete={handleSplashComplete} />;
+  }
 
   return (
     <>

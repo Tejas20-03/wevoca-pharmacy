@@ -83,7 +83,7 @@
 
 .instantOrder {
   margin: 0 0 0 20px;
-  font-weight: 500;
+  font-weight: 700;
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -151,7 +151,9 @@
       font-size: 13px;
       text-decoration: none;
       color: inherit;
-      text-transform: capitalize;
+      white-space: nowrap;
+      text-transform: uppercase;
+      font-weight:600 !important;
       padding: 8px 0 8px;
       width: 100%;
       @include responsive-xl() {

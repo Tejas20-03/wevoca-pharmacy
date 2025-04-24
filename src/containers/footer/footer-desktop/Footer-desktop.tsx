@@ -206,7 +206,7 @@ const FooterDesktop: React.FC<IProps> = ({ handleOrders, handleAccount }) => {
           </div>
         </Container>
       </div>
-      <div className={style.bottomFooter}>
+      {/* <div className={style.bottomFooter}>
         <Container>
           <Box
             sx={{
@@ -218,7 +218,7 @@ const FooterDesktop: React.FC<IProps> = ({ handleOrders, handleAccount }) => {
             <p>© {date} WEVOCA. Design</p>
           </Box>
         </Container>
-      </div>
+      </div> */}
     </footer>
   );
 };
