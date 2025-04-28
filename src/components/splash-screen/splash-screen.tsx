@@ -11,14 +11,14 @@ interface SplashScreenProps {
 const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
   const router = useRouter();
   const { width: windowWidth } = useWindowDimensions();
-  const [imageSrc, setImageSrc] = useState('/assets/splash-desktop.jpg');
+  const [imageSrc, setImageSrc] = useState('');
 
   useEffect(() => {
     // Set appropriate image based on screen width
     if (windowWidth <= 768) {
       setImageSrc('/assets/splash-mobile.jpg');
     } else {
-      setImageSrc('/assets/splash-desktop.jpg');
+      setImageSrc('/assets/splash-desktop.png');
     }
   }, [windowWidth]);
 
