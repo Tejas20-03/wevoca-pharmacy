@@ -37,12 +37,31 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
           priority
           className={styles.splashImage}
         />
+        
+        {/* Brand text in top left */}
+        <div className={styles.brandTextContainer}>
+          <h1 className={styles.brandName}>wevoca</h1>
+          <p className={styles.brandTagline}>Discover the Art of Wellbeing!</p>
+        </div>
+        
+        {/* Logo centered in the splash screen */}
+        <div className={styles.logoContainer}>
+          <Image 
+            src="/assets/temp-green-small-logo.png" 
+            alt="Wevoca Pharmacy Logo" 
+            width={300} 
+            height={300}
+            quality={100}
+            priority
+          />
+        </div>
+        
         <button 
           className={styles.arrowButton}
           onClick={handleArrowClick}
           aria-label="Enter Website"
         >
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="12" fill="white"/>
             <path d="M9 6L15 12L9 18" stroke="#008176" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>

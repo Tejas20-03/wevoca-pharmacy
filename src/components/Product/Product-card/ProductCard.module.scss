@@ -10,7 +10,10 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   overflow: hidden;
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   @include responsive-lg() {
     flex: 0 0 calc(33.3% - 20px);
     max-width: calc(33.3% - 20px);

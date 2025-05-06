@@ -30,7 +30,7 @@
                 box-shadow: 0px;
                 transition: 200ms ease-in-out;
                 border-bottom: 1px solid var(--primary-color); // or
-                font-size: 0.9rem;
+                font-size: 1.2rem;
                 @include responsive-sm() {
                     font-size: 0.8rem;
                     line-height: 1.9;

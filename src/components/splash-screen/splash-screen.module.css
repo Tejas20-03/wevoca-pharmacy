@@ -1,51 +1,101 @@
 .splashContainer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 9999;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .imageContainer {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .splashImage {
-    object-fit: cover;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.splashImage {
+  object-fit: cover;
+}
+
+.arrowButton {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.arrowButton:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.brandTextContainer {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  z-index: 10;
+}
+
+.brandName {
+  font-family: "Retrograde", sans-serif !important;
+  font-size: 6.5rem;
+  color: white;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.brandTagline {
+  font-family: "DINNextLTArabic", sans-serif !important;
+  font-size: 2.2rem;
+  color: white;
+  margin: 0.5rem 0 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.logoContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
   .arrowButton {
-    position: absolute;
-    bottom: 10%;
+    width: 70px;
+    height: 70px;
+  }
+
+  .brandTextContainer {
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease;
+    text-align: center;
+    width: 100%;
   }
-  
-  .arrowButton:hover {
-    transform: translateX(-50%) scale(1.1);
+
+  .brandName {
+    font-size: 2.5rem;
   }
-  
-  @media (max-width: 768px) {
-    .arrowButton {
-      width: 70px;
-      height: 70px;
-    }
+
+  .brandTagline {
+    font-size: 1rem;
   }
-  
+}
